@@ -7,4 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Book.create(title:Faker::Book.title,author:Faker::Book.author,genre:Faker::Book.genre,yearpublished:rand(2024))
+Book.create
+(title:Faker::Book.title,
+author:Faker::Book.author,
+genre:Faker::Book.genre,
+yearpublished:rand(2024))
