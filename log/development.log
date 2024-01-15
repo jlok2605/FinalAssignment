@@ -9585,3 +9585,307 @@ Migrating to AddBooknameToBorrowedBook (20240115014706)
   [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240115014706') RETURNING "version"[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.034929"], ["quantity", 5], ["id", 1513]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.037469"], ["quantity", 5], ["id", 1514]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.038732"], ["quantity", 1], ["id", 1515]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.039964"], ["quantity", 4], ["id", 1516]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.041010"], ["quantity", 4], ["id", 1517]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.042250"], ["quantity", 5], ["id", 1518]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.043734"], ["quantity", 3], ["id", 1519]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.8ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.045382"], ["quantity", 1], ["id", 1520]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.047063"], ["quantity", 2], ["id", 1521]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.048266"], ["quantity", 2], ["id", 1522]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.049349"], ["quantity", 3], ["id", 1523]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.052383"], ["quantity", 1], ["id", 1524]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.053629"], ["quantity", 5], ["id", 1525]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.054877"], ["quantity", 2], ["id", 1526]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.055906"], ["quantity", 4], ["id", 1527]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.057255"], ["quantity", 3], ["id", 1528]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.058340"], ["quantity", 1], ["id", 1529]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.059603"], ["quantity", 3], ["id", 1530]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.060779"], ["quantity", 5], ["id", 1531]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.062030"], ["quantity", 1], ["id", 1532]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.063179"], ["quantity", 3], ["id", 1533]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.064335"], ["quantity", 1], ["id", 1534]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.7ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.065791"], ["quantity", 3], ["id", 1535]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.068474"], ["quantity", 3], ["id", 1536]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.070652"], ["quantity", 3], ["id", 1537]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.071806"], ["quantity", 1], ["id", 1538]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.073626"], ["quantity", 2], ["id", 1539]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.074730"], ["quantity", 4], ["id", 1540]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.076092"], ["quantity", 5], ["id", 1541]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.077242"], ["quantity", 1], ["id", 1542]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.078588"], ["quantity", 4], ["id", 1543]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.079624"], ["quantity", 3], ["id", 1544]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.080790"], ["quantity", 4], ["id", 1545]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.081865"], ["quantity", 1], ["id", 1546]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.082941"], ["quantity", 4], ["id", 1547]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.084403"], ["quantity", 4], ["id", 1548]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.085870"], ["quantity", 4], ["id", 1549]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.088230"], ["quantity", 4], ["id", 1550]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.089417"], ["quantity", 1], ["id", 1551]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.090990"], ["quantity", 5], ["id", 1552]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.092473"], ["quantity", 1], ["id", 1553]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.094047"], ["quantity", 3], ["id", 1554]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.095108"], ["quantity", 3], ["id", 1555]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.096459"], ["quantity", 5], ["id", 1556]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.097492"], ["quantity", 2], ["id", 1557]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.098861"], ["quantity", 5], ["id", 1558]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.099922"], ["quantity", 5], ["id", 1559]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.101105"], ["quantity", 4], ["id", 1560]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.102208"], ["quantity", 4], ["id", 1561]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.103586"], ["quantity", 2], ["id", 1562]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.105485"], ["quantity", 4], ["id", 1563]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.106665"], ["quantity", 5], ["id", 1564]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.108168"], ["quantity", 5], ["id", 1565]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.109202"], ["quantity", 4], ["id", 1566]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.110500"], ["quantity", 2], ["id", 1567]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.111652"], ["quantity", 2], ["id", 1568]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.112995"], ["quantity", 3], ["id", 1569]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.114010"], ["quantity", 5], ["id", 1570]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.115237"], ["quantity", 4], ["id", 1571]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.116382"], ["quantity", 3], ["id", 1572]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.117958"], ["quantity", 5], ["id", 1573]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.119264"], ["quantity", 4], ["id", 1574]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.120571"], ["quantity", 1], ["id", 1575]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.122523"], ["quantity", 2], ["id", 1576]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.123735"], ["quantity", 2], ["id", 1577]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.125188"], ["quantity", 4], ["id", 1578]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.126379"], ["quantity", 5], ["id", 1579]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.127773"], ["quantity", 1], ["id", 1580]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.128850"], ["quantity", 5], ["id", 1581]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.130214"], ["quantity", 1], ["id", 1582]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.131367"], ["quantity", 2], ["id", 1583]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.132645"], ["quantity", 5], ["id", 1584]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.133731"], ["quantity", 2], ["id", 1585]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.135039"], ["quantity", 1], ["id", 1586]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.136065"], ["quantity", 3], ["id", 1587]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.137532"], ["quantity", 1], ["id", 1588]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (1.0ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.138817"], ["quantity", 2], ["id", 1589]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.140591"], ["quantity", 3], ["id", 1590]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.141905"], ["quantity", 1], ["id", 1591]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.143037"], ["quantity", 1], ["id", 1592]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.144372"], ["quantity", 5], ["id", 1593]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.145422"], ["quantity", 2], ["id", 1594]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.146764"], ["quantity", 4], ["id", 1595]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.147777"], ["quantity", 5], ["id", 1596]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.149005"], ["quantity", 5], ["id", 1597]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.150032"], ["quantity", 5], ["id", 1598]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.151413"], ["quantity", 2], ["id", 1599]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.152512"], ["quantity", 4], ["id", 1600]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.153949"], ["quantity", 2], ["id", 1601]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.9ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.155020"], ["quantity", 3], ["id", 1602]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.156787"], ["quantity", 3], ["id", 1603]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.157860"], ["quantity", 1], ["id", 1604]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.159220"], ["quantity", 5], ["id", 1605]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.160480"], ["quantity", 1], ["id", 1606]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.161509"], ["quantity", 1], ["id", 1607]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.162796"], ["quantity", 1], ["id", 1608]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.163909"], ["quantity", 5], ["id", 1609]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.165134"], ["quantity", 5], ["id", 1610]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.166143"], ["quantity", 2], ["id", 1611]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "quantity" = ? WHERE "books"."id" = ?[0m  [["updated_at", "2024-01-15 07:14:11.167463"], ["quantity", 5], ["id", 1612]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
