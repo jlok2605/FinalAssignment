@@ -68,3 +68,4 @@ end
 
 gem 'faker'
 gem 'active_model_serializers'
+gem 'bcrypt', '~> 3.1.7'
