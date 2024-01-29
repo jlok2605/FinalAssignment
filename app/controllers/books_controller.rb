@@ -13,9 +13,15 @@ class BooksController < ApplicationController
     end
     
     def create
+        book = Book.create! (book_params)
+        render json: book, status:created
+
     end
     
     def destroy
+        book = Book.find(params[:id])
+        book.destroy
+
     end
     
     private 
