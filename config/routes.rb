@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :books, only: [:index, :show, :create, :destroy]
+  resources :books, only: [:index, :show, :create, :destroy, :new]
   resources :users, only: [:new, :create]
+  resources :borrowed_books, only: [:create, :destroy]
+  resources :users do
+    resources :borrowed_books, only [:index]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
