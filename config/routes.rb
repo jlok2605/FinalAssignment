@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :borrowed_books, only: [:create, :destroy]
   resources :users do
-    resources :borrowed_books, only [:index]
+    resources :borrowed_books, only: [:index]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

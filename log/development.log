@@ -10102,3 +10102,113 @@ Migrating to AddTimeToBorrowedBooks (20240128081102)
   [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240128081102') RETURNING "version"[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-01-29 17:30:32 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 375)
+Completed 200 OK in 128ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 284047)
+
+
+Started GET "/" for ::1 at 2024-01-29 17:30:53 +1000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/" for ::1 at 2024-01-29 17:43:44 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 375)
+Completed 200 OK in 79ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 284049)
+
+
+Started GET "/" for ::1 at 2024-01-29 17:43:50 +1000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /usr/share/rvm/gems/ruby-3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 292)
+
+
+Started GET "/books" for ::1 at 2024-01-29 17:43:55 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:6: syntax error, unexpected ':', expecting `end' or dummy end
+        return json: books, status :ok
+                   ^
+/home/jeremy/Assignment/app/controllers/books_controller.rb:11: syntax error, unexpected label, expecting `do' or '{' or '('
+...ializer: BookSerializer status: :ok
+...                        ^~~~~~~
+/home/jeremy/Assignment/app/controllers/books_controller.rb:29: syntax error, unexpected ':', expecting '}'
+        render json {error: "Book not found"}, status :n...
+                          ^
+):
+  
+app/controllers/books_controller.rb:6: syntax error, unexpected ':', expecting `end' or dummy end
+app/controllers/books_controller.rb:11: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/books_controller.rb:29: syntax error, unexpected ':', expecting '}'
+Started GET "/books" for ::1 at 2024-01-29 17:45:07 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:6: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...   render json: books, status :ok
+...                              ^
+/home/jeremy/Assignment/app/controllers/books_controller.rb:11: syntax error, unexpected label, expecting `do' or '{' or '('
+...ializer: BookSerializer status: :ok
+...                        ^~~~~~~
+/home/jeremy/Assignment/app/controllers/books_controller.rb:29: syntax error, unexpected ':', expecting '}'
+        render json {error: "Book not found"}, status :n...
+                          ^
+):
+  
+app/controllers/books_controller.rb:6: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/books_controller.rb:11: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/books_controller.rb:29: syntax error, unexpected ':', expecting '}'
+Started GET "/books" for ::1 at 2024-01-29 17:45:17 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:6: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...   render json: books, status :ok
+...                              ^
+/home/jeremy/Assignment/app/controllers/books_controller.rb:11: syntax error, unexpected label, expecting `do' or '{' or '('
+...ializer: BookSerializer status: :ok
+...                        ^~~~~~~
+/home/jeremy/Assignment/app/controllers/books_controller.rb:29: syntax error, unexpected ':', expecting '}'
+        render json {error: "Book not found"}, status :n...
+                          ^
+):
+  
+app/controllers/books_controller.rb:6: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/books_controller.rb:11: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/books_controller.rb:29: syntax error, unexpected ':', expecting '}'
+Started GET "/books" for ::1 at 2024-01-29 17:45:38 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:11: syntax error, unexpected label, expecting `do' or '{' or '('
+...ializer: BookSerializer status: :ok
+...                        ^~~~~~~
+/home/jeremy/Assignment/app/controllers/books_controller.rb:29: syntax error, unexpected ':', expecting '}'
+        render json {error: "Book not found"}, status :n...
+                          ^
+):
+  
+app/controllers/books_controller.rb:11: syntax error, unexpected label, expecting `do' or '{' or '('
+app/controllers/books_controller.rb:29: syntax error, unexpected ':', expecting '}'
+Started GET "/books" for ::1 at 2024-01-29 17:46:56 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:28: syntax error, unexpected ':', expecting '}'
+        render json {error: "Book not found"}, status: :...
+                          ^
+):
+  
+app/controllers/books_controller.rb:28: syntax error, unexpected ':', expecting '}'
+Started GET "/books" for ::1 at 2024-01-29 17:47:46 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  [1m[36mBook Load (1.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.5ms)
+Completed 200 OK in 51ms (Views: 33.4ms | ActiveRecord: 2.8ms | Allocations: 40774)
+
+
