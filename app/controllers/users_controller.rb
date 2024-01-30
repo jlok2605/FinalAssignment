@@ -3,22 +3,22 @@ class UsersController < ApplicationController
         @user = User.new
     end
     def create
-        @user = User.new(user_params)
+        @user = User.new(@user_params)
 
         if @user.save
-        # User created successfully
-        # if @user.admin? && @user.authenticate(params[:user][:admin_code])
-        # # Admin-specific logic
-        #     session[:admin_user_id] = @user.id
-        #     # redirect_to root_path, notice: "Admin signup successful"
-        # else
-        # # Regular user signup successful
-        #     redirect_to root_path, notice: "User signup successful"
-        # end
-    else
-        # User creation failed
-        render :new
-    end
+        #User created successfully
+        if @user.admin? && @user.authenticate(params[:user][:admin_code])
+        # Admin-specific logic
+            session[:admin_user_id] = @user.id
+            # redirect_to root_path, notice: "Admin signup successful"
+        else
+        # Regular user signup successful
+            redirect_to root_path, notice: "User signup successful"
+        end
+    # else
+    #     # User creation failed
+    #     render :new
+    # end
     end
     def index
         @users =   User.all
@@ -29,12 +29,8 @@ class UsersController < ApplicationController
         render json: @user, status: :ok
     end    
     
-private
     def user_params
-        params.require(:user).permit(:username)
+        params.require(:user).permit(:username, :password, :admin_code)
     end
 end
-
-
-
-
+end

@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-    # has_secure_password
+    has_secure_password
     validates :admin_code,presence: true, if: :admin?
+    validates :password, presence: true, length: {minimum:6} 
+    validates :username, presence: true, uniqueness: true
     has_many :borrowed_book
 
     def admin?
