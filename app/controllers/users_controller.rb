@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
     def new
         @user = User.new
     end
@@ -6,7 +6,7 @@ class UserController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save 
-            redirect_to_root_path, notice: "Signup successful"
+            redirect_to root_path, notice: "Signup successful"
                 if @user.admin? && user.authenticate(param[:user][:admin_code])
         else 
             render :new
@@ -18,4 +18,10 @@ class UserController < ApplicationController
         session[admin_user_id] = @user_id
     end
 
+    def index
+    user =   User.all
+    render json :user, status: :ok
+    end
+    
+    end
 end
