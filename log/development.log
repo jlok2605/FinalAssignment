@@ -12578,3 +12578,64 @@ No serializer found for resource: #<User id: 1, username: nil, admin_number: nil
 Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 6430)
 
 
+Started POST "/books" for ::1 at 2024-01-30 20:51:48 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:34: syntax error, unexpected '=', expecting `end' or dummy end
+            flash [:alert] = 'You do not have permission ...
+                           ^
+):
+  
+app/controllers/books_controller.rb:34: syntax error, unexpected '=', expecting `end' or dummy end
+Started POST "/books" for ::1 at 2024-01-30 20:52:24 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:34: syntax error, unexpected '=', expecting `end' or dummy end
+            flash [:alert] = 'You do not have permission ...
+                           ^
+/home/jeremy/Assignment/app/controllers/books_controller.rb:38: syntax error, unexpected `end'):
+  
+app/controllers/books_controller.rb:34: syntax error, unexpected '=', expecting `end' or dummy end
+app/controllers/books_controller.rb:38: syntax error, unexpected `end'
+Started POST "/books" for ::1 at 2024-01-30 20:54:38 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting `end' or dummy end
+        head: no_content
+            ^
+/home/jeremy/Assignment/app/controllers/books_controller.rb:35: syntax error, unexpected '=', expecting `end' or dummy end
+            flash [:alert] = 'You do not have permission ...
+                           ^
+):
+  
+app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting `end' or dummy end
+app/controllers/books_controller.rb:35: syntax error, unexpected '=', expecting `end' or dummy end
+Started POST "/books" for ::1 at 2024-01-30 20:56:15 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:34: syntax error, unexpected '}', expecting =>
+...ission to perform this action'}
+...                              ^
+):
+  
+app/controllers/books_controller.rb:34: syntax error, unexpected '}', expecting =>
+Started POST "/books" for ::1 at 2024-01-30 20:56:43 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:34: syntax error, unexpected '}', expecting =>
+...ission to perform this action'}, status: :forbidden
+...                              ^
+):
+  
+app/controllers/books_controller.rb:34: syntax error, unexpected '}', expecting =>
+Started POST "/books" for ::1 at 2024-01-30 20:57:06 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#create as */*
+  Parameters: {"book"=>{"title"=>"TestingBook", "genre"=>"Horror", "author"=>"James Bond", "yearpublished"=>"1952", "quantity"=>"3"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1379)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<BooksController:0x0000000000b928>):
+  
+app/controllers/books_controller.rb:33:in `require_admin'

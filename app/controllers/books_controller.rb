@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+    before_action :require_admin, only: [:create, :destroy]
         #GET/Books displays all the books
     rescue_from ActiveRecord::RecordNotFound, with: :render_book_not_found
     def index
@@ -20,11 +21,21 @@ class BooksController < ApplicationController
     def destroy
         book = Book.find(params[:id])
         book.destroy
-
+        head :no_content
     end
     
     private 
     def render_book_not_found
         render json: {error: "Book not found"}, status: :not_found
     end 
+
+    def require_admin
+        unless current_user&.admin?
+        render json: { error: 'You do not have permission to perform this action' }, status: :forbidden
+        end
+    end
+    def book_params
+        params.require(:book).permit(:title, :genre, :author, :yearpublished, :quantity)
+    end
 end
+
