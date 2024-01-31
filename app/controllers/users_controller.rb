@@ -15,10 +15,10 @@ class UsersController < ApplicationController
         # Regular user signup successful
             redirect_to root_path, notice: "User signup successful"
         end
-    # else
-    #     # User creation failed
-    #     render :new
-    # end
+    else
+    # User creation failed
+        render :new
+    end
     end
     def index
         @users =   User.all

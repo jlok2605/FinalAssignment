@@ -3,7 +3,7 @@ class User < ApplicationRecord
     validates :admin_code,presence: true, if: :admin?
     validates :password, presence: true, length: {minimum:6} 
     validates :username, presence: true, uniqueness: true
-    has_many :borrowed_book
+    has_many :borrowed_books
 
     def admin?
         admin_number.present?

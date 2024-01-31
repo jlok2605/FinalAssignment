@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
     before_action :require_admin, only: [:create, :destroy]
+    before_action :authenticate_user!
         #GET/Books displays all the books
     rescue_from ActiveRecord::RecordNotFound, with: :render_book_not_found
     def index
