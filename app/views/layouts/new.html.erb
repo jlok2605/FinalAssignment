@@ -13,5 +13,12 @@
 <%= form.label :password_confirmation %>
 <%= form.password_field :password_confirmation %>
 
+<% if flash[:alert] %>
+<div class="alert alert-danger">
+    <%= flash[:alert] %>
+</div>
+<% end %>
+
+
 <%= form.submit "Sign Up" %>
 <% end %>

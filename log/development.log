@@ -12639,3 +12639,616 @@ Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1
 NameError (undefined local variable or method `current_user' for #<BooksController:0x0000000000b928>):
   
 app/controllers/books_controller.rb:33:in `require_admin'
+Started POST "/users" for ::1 at 2024-01-31 21:13:08 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/users_controller.rb:22: else without rescue is useless
+      else
+      ^~~~
+/home/jeremy/Assignment/app/controllers/users_controller.rb:40: syntax error, unexpected `end'):
+  
+app/controllers/users_controller.rb:22: else without rescue is useless
+app/controllers/users_controller.rb:40: syntax error, unexpected `end'
+Started POST "/users" for ::1 at 2024-01-31 21:13:37 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 24ms (ActiveRecord: 1.8ms | Allocations: 23710)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:13:47 +1000
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:26:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.28ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 6437)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:16:05 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/users_controller.rb:22: else without rescue is useless
+      else
+      ^~~~
+/home/jeremy/Assignment/app/controllers/users_controller.rb:41: syntax error, unexpected `end'):
+  
+app/controllers/users_controller.rb:22: else without rescue is useless
+app/controllers/users_controller.rb:41: syntax error, unexpected `end'
+Started POST "/users" for ::1 at 2024-01-31 21:18:59 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.6ms | Allocations: 26078)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:25:in `rescue in create'
+app/controllers/users_controller.rb:5:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:21:28 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.0ms | Allocations: 7583)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:35:in `user_params'
+app/controllers/users_controller.rb:6:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:21:48 +1000
+Processing by UsersController#create as */*
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 503)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:35:in `user_params'
+app/controllers/users_controller.rb:6:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:22:22 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.0ms | Allocations: 7583)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:35:in `user_params'
+app/controllers/users_controller.rb:6:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:23:05 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"2ndtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 1.5ms | Allocations: 16668)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:23:39 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"2ndtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "2ndtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "admin_number", "created_at", "updated_at", "admin_code", "password_digest") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "2ndtest"], ["admin_number", nil], ["created_at", "2024-01-31 11:23:39.814121"], ["updated_at", "2024-01-31 11:23:39.814121"], ["admin_code", nil], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 4.5ms | Allocations: 11455)
+
+
+  
+NameError (undefined local variable or method `root_path' for #<UsersController:0x0000000000c170>):
+  
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:26:48 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"2ndtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "2ndtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 1.4ms | Allocations: 19915)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:31:39 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"2ndtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "2ndtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 1.4ms | Allocations: 19910)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started GET "/" for ::1 at 2024-01-31 21:31:49 +1000
+Processing by BooksController#index as */*
+  Parameters: {"user"=>{"username"=>"2ndtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "book"=>{}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.85ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.5ms | Allocations: 24103)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:32:10 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"2ndtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "2ndtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 0.7ms | Allocations: 2795)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:32:32 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"2ndtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 197ms (ActiveRecord: 0.8ms | Allocations: 13087)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:32:35 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"2ndtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:27:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.38ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 7609)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:32:47 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"2ndtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 180ms (ActiveRecord: 0.0ms | Allocations: 254)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:32:53 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"2ndtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:27:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.24ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1209)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:33:04 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"3rdtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 180ms (ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:33:09 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"3rdtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:27:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.29ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1198)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:33:16 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"3rdtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 181ms (ActiveRecord: 0.0ms | Allocations: 244)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:33:18 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"3rdtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:27:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.23ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1204)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:33:27 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"3rdtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 179ms (ActiveRecord: 0.0ms | Allocations: 244)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:33:32 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"3rdtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:27:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.24ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1204)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:33:48 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"4thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 178ms (ActiveRecord: 0.0ms | Allocations: 244)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:33:55 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"4thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:27:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.74ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1198)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:35:03 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"4thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 198ms (ActiveRecord: 0.8ms | Allocations: 13087)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:35:06 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"4thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:27:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.33ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 7610)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:35:30 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"4thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:27:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.34ms)
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 0.8ms | Allocations: 19572)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:35:34 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"4thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "4thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "admin_number", "created_at", "updated_at", "admin_code", "password_digest") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "4thtest"], ["admin_number", nil], ["created_at", "2024-01-31 11:35:34.306311"], ["updated_at", "2024-01-31 11:35:34.306311"], ["admin_code", nil], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 188ms (ActiveRecord: 3.0ms | Allocations: 5943)
+
+
+Started GET "/" for ::1 at 2024-01-31 21:35:34 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.01ms)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 0.6ms | Allocations: 25320)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:35:44 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"4thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:27:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.48ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:36:26 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"5thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 1.0ms | Allocations: 14982)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:38:37 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"5thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 0.8ms | Allocations: 14990)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:39:06 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"5thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 0.8ms | Allocations: 14982)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:39:44 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"5thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 198ms (ActiveRecord: 1.9ms | Allocations: 13135)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:40:00 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"5thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 184ms (ActiveRecord: 0.8ms | Allocations: 4230)
+
+
+Started GET "/users" for ::1 at 2024-01-31 21:40:06 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"5thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:27:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.47ms)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 7673)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:41:37 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"5thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 196ms (ActiveRecord: 0.8ms | Allocations: 13105)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:42:38 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"5thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "5thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "admin_number", "created_at", "updated_at", "admin_code", "password_digest") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "5thtest"], ["admin_number", nil], ["created_at", "2024-01-31 11:42:38.854562"], ["updated_at", "2024-01-31 11:42:38.854562"], ["admin_code", nil], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 194ms (ActiveRecord: 2.3ms | Allocations: 11397)
+
+
+Started GET "/" for ::1 at 2024-01-31 21:42:38 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.04ms)
+Completed 200 OK in 41ms (Views: 36.3ms | ActiveRecord: 0.5ms | Allocations: 25888)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:43:46 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 0.8ms | Allocations: 14943)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:44:29 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 187ms (ActiveRecord: 1.5ms | Allocations: 4292)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:45:32 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 182ms (ActiveRecord: 0.0ms | Allocations: 252)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:45:41 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 188ms (ActiveRecord: 1.1ms | Allocations: 4225)
+
+
+Started POST "/users" for ::1 at 2024-01-31 21:46:49 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 0.8ms | Allocations: 14992)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:49:35 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 0.8ms | Allocations: 14982)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2024-01-31 21:49:49 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 0.8ms | Allocations: 14984)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:21:in `create'
