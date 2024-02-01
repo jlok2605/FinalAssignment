@@ -16,7 +16,7 @@ class BorrowedBooksController < ApplicationController
         @book = @borrowed_book.book
 
         if @borrowed_book.returned_at.nil?
-            @borrowed_book.update(returned_at:Time.now)
+            @borrowed_book.update(returned_at: Time.now)
             redirect_to user_path(@user), notice: 'Book returned successfully'
         else
             redirect_to user_path(@user), alert: 'Book has already been returned'

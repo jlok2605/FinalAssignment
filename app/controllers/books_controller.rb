@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
     before_action :require_admin, only: [:create, :destroy]
-    before_action :authenticate_user!
+    # before_action :authenticate_user!
         #GET/Books displays all the books
     rescue_from ActiveRecord::RecordNotFound, with: :render_book_not_found
     def index
@@ -16,13 +16,12 @@ class BooksController < ApplicationController
     def create
         book = Book.create! (book_params)
         render json: book, status:created
-
     end
     
     def destroy
         book = Book.find(params[:id])
         book.destroy
-        head :no_content
+        head :no_content, notice: 'Book destroyed successfully'
     end
     
     private 
@@ -38,5 +37,9 @@ class BooksController < ApplicationController
     def book_params
         params.require(:book).permit(:title, :genre, :author, :yearpublished, :quantity)
     end
-end
 
+    # def authenticate_user!
+    #     unless current_user
+    #         redirect_to login_path, alert: 'Please log in'
+    # end
+end

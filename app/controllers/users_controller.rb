@@ -6,6 +6,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
   
       if (@user.password == @user.password_confirmation) && @user.save
+        # session[:user_id] = @user.id
         # User created successfully
         if @user.admin? && @user.authenticate(params[:user][:admin_code])
           # Admin-specific logic
