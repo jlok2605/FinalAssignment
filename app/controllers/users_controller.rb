@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       else
         # Password and confirmation don't match, or save failed
         flash.now[:alert] = 'Passwords do not match. Please ensure they match'
-        render :new
+        puts("Password do not match!!")
       end
     end
   

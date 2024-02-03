@@ -14079,3 +14079,988 @@ puma (6.4.1) lib/puma/request.rb:99:in `handle_request'
 puma (6.4.1) lib/puma/server.rb:464:in `process_client'
 puma (6.4.1) lib/puma/server.rb:245:in `block in run'
 puma (6.4.1) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2024-02-03 14:32:01 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:28:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.36ms)
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 0.8ms | Allocations: 19704)
+
+
+Started POST "/users" for ::1 at 2024-02-03 14:33:33 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.0ms | Allocations: 6954)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:22:in `create'
+Started POST "/users" for ::1 at 2024-02-03 14:35:33 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Redirected to http://localhost:3000/
+Completed 302 Found in 198ms (ActiveRecord: 0.9ms | Allocations: 12680)
+
+
+Started GET "/" for ::1 at 2024-02-03 14:35:34 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.3ms)
+Completed 200 OK in 26ms (Views: 21.7ms | ActiveRecord: 0.4ms | Allocations: 26923)
+
+
+Started POST "/users" for ::1 at 2024-02-03 14:36:52 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 200ms (ActiveRecord: 0.8ms | Allocations: 13079)
+
+
+  
+NoMethodError (undefined method `log' for nil:NilClass):
+  
+app/controllers/users_controller.rb:22:in `create'
+Started POST "/users" for ::1 at 2024-02-03 14:37:04 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 1.7ms | Allocations: 12836)
+
+
+  
+NoMethodError (undefined method `rails' for #<UsersController:0x0000000000bc70>):
+  
+app/controllers/users_controller.rb:22:in `create'
+Started POST "/users" for ::1 at 2024-02-03 14:37:17 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 197ms (ActiveRecord: 0.7ms | Allocations: 13140)
+
+
+Started POST "/users" for ::1 at 2024-02-03 14:37:23 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 187ms (ActiveRecord: 1.3ms | Allocations: 4227)
+
+
+Started GET "/users" for ::1 at 2024-02-03 14:40:08 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:28:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.39ms)
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 11478)
+
+
+Started POST "/users" for ::1 at 2024-02-03 14:40:20 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "6thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "admin_number", "created_at", "updated_at", "admin_code", "password_digest") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "6thtest"], ["admin_number", nil], ["created_at", "2024-02-03 04:40:20.600014"], ["updated_at", "2024-02-03 04:40:20.600014"], ["admin_code", nil], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 187ms (ActiveRecord: 2.4ms | Allocations: 5695)
+
+
+Started GET "/" for ::1 at 2024-02-03 14:40:20 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.05ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.7ms | Allocations: 25295)
+
+
+Started GET "/users" for ::1 at 2024-02-03 14:40:24 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:28:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.37ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1393)
+
+
+Started GET "/" for ::1 at 2024-02-03 20:18:56 +1000
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.61ms)
+Completed 200 OK in 28ms (Views: 21.9ms | ActiveRecord: 3.1ms | Allocations: 18822)
+
+
+Started GET "/books" for ::1 at 2024-02-03 20:21:46 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "book"=>{}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.08ms)
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 1.5ms | Allocations: 29551)
+
+
+Started GET "/users" for ::1 at 2024-02-03 20:32:13 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"6thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:28:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.38ms)
+Completed 200 OK in 20ms (Views: 16.1ms | ActiveRecord: 0.9ms | Allocations: 19760)
+
+
+Started POST "/borrowed_books" for ::1 at 2024-02-03 20:33:06 +1000
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for BorrowedBooksController):
+  
+actionpack (7.1.2) lib/abstract_controller/base.rb:155:in `process'
+actionview (7.1.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:43:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.2) lib/active_record/migration.rb:654:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.1) lib/puma/configuration.rb:272:in `call'
+puma (6.4.1) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.1) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.1) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.1) lib/puma/server.rb:464:in `process_client'
+puma (6.4.1) lib/puma/server.rb:245:in `block in run'
+puma (6.4.1) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started GET "/borrowed_books" for ::1 at 2024-02-03 20:53:59 +1000
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BorrowedBooksController):
+  
+actionpack (7.1.2) lib/abstract_controller/base.rb:155:in `process'
+actionview (7.1.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.2) lib/active_record/migration.rb:654:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.1) lib/puma/configuration.rb:272:in `call'
+puma (6.4.1) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.1) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.1) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.1) lib/puma/server.rb:464:in `process_client'
+puma (6.4.1) lib/puma/server.rb:245:in `block in run'
+puma (6.4.1) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started POST "/borrowed_books" for ::1 at 2024-02-03 20:54:11 +1000
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for BorrowedBooksController):
+  
+actionpack (7.1.2) lib/abstract_controller/base.rb:155:in `process'
+actionview (7.1.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:43:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.2) lib/active_record/migration.rb:654:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.1) lib/puma/configuration.rb:272:in `call'
+puma (6.4.1) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.1) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.1) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.1) lib/puma/server.rb:464:in `process_client'
+puma (6.4.1) lib/puma/server.rb:245:in `block in run'
+puma (6.4.1) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started POST "/borrowed_books" for ::1 at 2024-02-03 20:55:32 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... redirect_to root_path, alert 'User or book not found'
+...                              ^
+):
+  
+app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started GET "/borrowed_books" for ::1 at 2024-02-03 20:55:53 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... redirect_to root_path, alert 'User or book not found'
+...                              ^
+):
+  
+app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started GET "/borrowed_books" for ::1 at 2024-02-03 20:56:32 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... redirect_to root_path, alert 'User or book not found'
+...                              ^
+):
+  
+app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started GET "/borrowed_books" for ::1 at 2024-02-03 20:56:43 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... redirect_to root_path, alert 'User or book not found'
+...                              ^
+):
+  
+app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started GET "/borrowed_books" for ::1 at 2024-02-03 20:57:04 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... redirect_to root_path, alert 'User or book not found'
+...                              ^
+):
+  
+app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started POST "/borrowed_books" for ::1 at 2024-02-03 20:57:11 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... redirect_to root_path, alert 'User or book not found'
+...                              ^
+):
+  
+app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started POST "/borrowed_books" for ::1 at 2024-02-03 20:59:25 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... redirect_to root_path, alert 'User or book not found'
+...                              ^
+):
+  
+app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started GET "/borrowed_books" for ::1 at 2024-02-03 20:59:29 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... redirect_to root_path, alert 'User or book not found'
+...                              ^
+):
+  
+app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started GET "/borrowed_books" for ::1 at 2024-02-03 20:59:41 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... redirect_to root_path, alert 'User or book not found'
+...                              ^
+):
+  
+app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started GET "/borrowed_books" for ::1 at 2024-02-03 21:00:33 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... redirect_to root_path, alert 'User or book not found'
+...                              ^
+):
+  
+app/controllers/borrowed_books_controller.rb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started GET "/borrowed_books" for ::1 at 2024-02-03 21:01:34 +1000
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BorrowedBooksController):
+  
+actionpack (7.1.2) lib/abstract_controller/base.rb:155:in `process'
+actionview (7.1.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.2) lib/active_record/migration.rb:654:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.1) lib/puma/configuration.rb:272:in `call'
+puma (6.4.1) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.1) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.1) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.1) lib/puma/server.rb:464:in `process_client'
+puma (6.4.1) lib/puma/server.rb:245:in `block in run'
+puma (6.4.1) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started GET "/borrowed_books" for ::1 at 2024-02-03 21:01:48 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BorrowedBooksController):
+  
+actionpack (7.1.2) lib/abstract_controller/base.rb:155:in `process'
+actionview (7.1.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.2) lib/active_record/migration.rb:654:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.1) lib/puma/configuration.rb:272:in `call'
+puma (6.4.1) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.1) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.1) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.1) lib/puma/server.rb:464:in `process_client'
+puma (6.4.1) lib/puma/server.rb:245:in `block in run'
+puma (6.4.1) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started POST "/users/10/borrowed_books/1/borrow_book%0A566" for ::1 at 2024-02-03 21:19:21 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/users/10/borrowed_books/1/borrow_book%0A566"):
+  
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started POST "/users/10/borrowed_books/1/borrow_book%0A566" for ::1 at 2024-02-03 21:19:32 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users/10/borrowed_books/1/borrow_book%0A566"):
+  
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started POST "/users/10/borrowed_books/1566/borrow_boo" for ::1 at 2024-02-03 21:19:49 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/users/10/borrowed_books/1566/borrow_boo"):
+  
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 10,
+    "book_id" 1566
+}
+Started POST "/users/10/borrowed_books/1566/borrow_boo" for ::1 at 2024-02-03 21:19:59 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users/10/borrowed_books/1566/borrow_boo"):
+  
+Started POST "/users/10/borrowed_books/1566/borrow_book" for ::1 at 2024-02-03 21:20:27 +1000
+  
+ActionController::RoutingError (No route matches [POST] "/users/10/borrowed_books/1566/borrow_book"):
+  
+Started POST "/users/10/borrowed_books/1566/borrow_book" for ::1 at 2024-02-03 21:20:59 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users/10/borrowed_books/1566/borrow_book"):
+  
+Started POST "/users/10/borrowed_books/1566/borrow_book" for ::1 at 2024-02-03 21:25:00 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "id"=>"1566"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:5:in `borrow_book'
+Completed 404 Not Found in 28ms (ActiveRecord: 1.1ms | Allocations: 23722)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book without an ID):
+  
+app/controllers/borrowed_books_controller.rb:6:in `borrow_book'
+Started GET "/books" for ::1 at 2024-02-03 21:25:11 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.84ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.4ms | Allocations: 24365)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:25:37 +1000
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "id"=>"1610"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:5:in `borrow_book'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 900)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book without an ID):
+  
+app/controllers/borrowed_books_controller.rb:6:in `borrow_book'
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:27:43 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "id"=>"1610"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:5:in `borrow_book'
+Completed 404 Not Found in 33ms (ActiveRecord: 2.9ms | Allocations: 23722)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book without an ID):
+  
+app/controllers/borrowed_books_controller.rb:6:in `borrow_book'
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:29:27 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "id"=>"1610"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:5:in `borrow_book'
+Completed 404 Not Found in 24ms (ActiveRecord: 1.0ms | Allocations: 23722)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book without an ID):
+  
+app/controllers/borrowed_books_controller.rb:6:in `borrow_book'
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:30:59 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/models/borrowed_book.rb:2: syntax error, unexpected ':', expecting `end' or dummy end
+    belongs_to: user
+              ^
+):
+  
+app/models/borrowed_book.rb:2: syntax error, unexpected ':', expecting `end' or dummy end
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:31:59 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/models/borrowed_book.rb:2: syntax error, unexpected ':', expecting `end' or dummy end
+    belongs_to: user
+              ^
+):
+  
+app/models/borrowed_book.rb:2: syntax error, unexpected ':', expecting `end' or dummy end
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:32:07 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/models/borrowed_book.rb:2: syntax error, unexpected ':', expecting `end' or dummy end
+    belongs_to: user
+              ^
+):
+  
+app/models/borrowed_book.rb:2: syntax error, unexpected ':', expecting `end' or dummy end
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:32:31 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/models/borrowed_book.rb:2: syntax error, unexpected ':', expecting `end' or dummy end
+    belongs_to: user
+              ^
+):
+  
+app/models/borrowed_book.rb:2: syntax error, unexpected ':', expecting `end' or dummy end
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:33:05 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:5:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:6:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 29ms (ActiveRecord: 1.6ms | Allocations: 26781)
+
+
+Started GET "/users/10" for ::1 at 2024-02-03 21:33:05 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.21ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 5305)
+
+
+Started GET "/users/10/borrowed_books" for ::1 at 2024-02-03 21:35:40 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/10/borrowed_books"):
+  
+Started GET "/users/10/borrowed_books" for ::1 at 2024-02-03 21:36:55 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/10/borrowed_books"):
+  
+Started GET "/users/10/borrowed_books" for ::1 at 2024-02-03 21:37:30 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/users/10/borrowed_books"):
+  
+Started GET "/users/10/borrowed_books" for ::1 at 2024-02-03 21:38:24 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/10/borrowed_books"):
+  
+Started GET "/users/10/borrowed_books" for ::1 at 2024-02-03 21:38:34 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/10/borrowed_books"):
+  
+Started GET "/users/10/borrowed_books" for ::1 at 2024-02-03 21:39:24 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#index as */*
+  Parameters: {"user_id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:5:in `index'
+No template found for BorrowedBooksController#index, rendering head :no_content
+Completed 204 No Content in 39ms (ActiveRecord: 1.5ms | Allocations: 28569)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:39:55 +1000
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "id"=>"1610"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms | Allocations: 2351)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book without an ID):
+  
+app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:40:17 +1000
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms | Allocations: 9957)
+
+
+Started GET "/users/10" for ::1 at 2024-02-03 21:40:17 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.22ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 5227)
+
+
+Started GET "/users/10/borrowed_books" for ::1 at 2024-02-03 21:40:32 +1000
+Processing by BorrowedBooksController#index as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "borrowed_book"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:5:in `index'
+No template found for BorrowedBooksController#index, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms | Allocations: 636)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:54:04 +1000
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms | Allocations: 10616)
+
+
+Started GET "/users/10" for ::1 at 2024-02-03 21:54:04 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.24ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 4709)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:54:56 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 32ms (ActiveRecord: 1.4ms | Allocations: 26780)
+
+
+Started GET "/users/10" for ::1 at 2024-02-03 21:54:56 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.21ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 5243)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-03 21:55:21 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 41ms (ActiveRecord: 2.1ms | Allocations: 26782)
+
+
+Started GET "/users/10" for ::1 at 2024-02-03 21:55:21 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.26ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 5243)
+
+

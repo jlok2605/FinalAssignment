@@ -1,13 +1,37 @@
 class BorrowedBooksController < ApplicationController
+    # before_action :authenticate_user!, only: [:borrow_book, :return]
+
+    def index
+        @user = User.find(params[:user_id])
+        @borrowed_book = @user.borrowed_books.includes(:book)
+    end
     def borrow_book
         @user = User.find(params[:user_id])
         @book = Book.find(params[:book_id])
 
-        if @book.available_copies.positive?
-            @borrowed_book = BorrowedBook.create(user: @user, book:@book,checked_out_at:Time.now)
-            redirect_to user_path(@user), alert: 'Book checked out successfully'
+        if @user && @book
+            begin
+                @book.borrow!
+                @borrowed_book = BorrowedBook.create(user: @user, book: @book, checked_out_at: Time.now)
+                redirect_to user_path(@user), alert: 'Book checked out!'
+                puts "Working"
+            rescue StandardError => e
+                redirect_to user_path(@user), alert: e.message
+            end
         else
-            redirect_to user_path(@user), alert: "Currently no copies of this book available"
+            redirect_to root_path, alert: 'User or book not found'
+            puts "Not working"
+        end
+    end
+
+
+
+    def borrow! 
+        #Changes the quantities of books
+        if available_quantities.positive?
+            update(available_quantities: available_quantities - 1)
+        else
+            raise 'No available copies of this book'
         end
     end
     def return
