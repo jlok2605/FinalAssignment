@@ -8,13 +8,14 @@ class BorrowedBooksController < ApplicationController
     def borrow_book
         @user = User.find(params[:user_id])
         @book = Book.find(params[:book_id])
+        puts "TEST 1"
 
         if @user && @book
             begin
                 @book.borrow!
                 @borrowed_book = BorrowedBook.create(user: @user, book: @book, checked_out_at: Time.now)
+                puts "WORKING!@!!!!"
                 redirect_to user_path(@user), alert: 'Book checked out!'
-                puts "Working"
             rescue StandardError => e
                 redirect_to user_path(@user), alert: e.message
             end
@@ -34,16 +35,17 @@ class BorrowedBooksController < ApplicationController
             raise 'No available copies of this book'
         end
     end
-    def return
-        @borrowed_book = BorrowedBook.find(params[:id])
-        @user = @borrowed_book.user
-        @book = @borrowed_book.book
+#     def return
+#         @borrowed_book = BorrowedBook.find(params[:id])
+#         @user = @borrowed_book.user
+#         @book = @borrowed_book.book
 
-        if @borrowed_book.returned_at.nil?
-            @borrowed_book.update(returned_at: Time.now)
-            redirect_to user_path(@user), notice: 'Book returned successfully'
-        else
-            redirect_to user_path(@user), alert: 'Book has already been returned'
-        end
-    end
+#         if @borrowed_book.returned_at.nil?
+#             @borrowed_book.update(returned_at: Time.now)
+#             redirect_to user_path(@user), notice: 'Book returned successfully'
+#         else
+#             redirect_to user_path(@user), alert: 'Book has already been returned'
+#         end
+#     end
+# end
 end

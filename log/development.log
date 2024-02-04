@@ -15064,3 +15064,336 @@ Processing by UsersController#show as */*
 Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 5243)
 
 
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:11:23 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 32ms (ActiveRecord: 1.7ms | Allocations: 26780)
+
+
+Started GET "/users/10" for ::1 at 2024-02-04 10:11:24 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.47ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 5243)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:12:37 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:21: else without rescue is useless
+        else
+        ^~~~
+/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:49: syntax error, unexpected end-of-input
+# end
+     ^
+):
+  
+app/controllers/borrowed_books_controller.rb:21: else without rescue is useless
+app/controllers/borrowed_books_controller.rb:49: syntax error, unexpected end-of-input
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:13:04 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:49: syntax error, unexpected end-of-input
+# end
+     ^
+):
+  
+app/controllers/borrowed_books_controller.rb:49: syntax error, unexpected end-of-input
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:13:20 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:49: syntax error, unexpected end-of-input
+# end
+     ^
+):
+  
+app/controllers/borrowed_books_controller.rb:49: syntax error, unexpected end-of-input
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:13:30 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:49: syntax error, unexpected end-of-input
+# end
+     ^
+):
+  
+app/controllers/borrowed_books_controller.rb:49: syntax error, unexpected end-of-input
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:13:39 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/borrowed_books_controller.rb:49: syntax error, unexpected end-of-input
+# end
+     ^
+):
+  
+app/controllers/borrowed_books_controller.rb:49: syntax error, unexpected end-of-input
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:13:47 +1000
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 29ms (ActiveRecord: 2.4ms | Allocations: 26755)
+
+
+Started GET "/users/10" for ::1 at 2024-02-04 10:13:48 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.22ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 5243)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:32:06 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 35ms (ActiveRecord: 1.6ms | Allocations: 26781)
+
+
+Started GET "/users/10" for ::1 at 2024-02-04 10:32:06 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.17ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 5243)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:32:09 +1000
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 1294)
+
+
+Started GET "/users/10" for ::1 at 2024-02-04 10:32:09 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 605)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:33:56 +1000
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 14ms (ActiveRecord: 2.1ms | Allocations: 11285)
+
+
+Started GET "/users/10" for ::1 at 2024-02-04 10:33:56 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 4707)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:34:03 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 40ms (ActiveRecord: 1.6ms | Allocations: 26781)
+
+
+Started GET "/users/10" for ::1 at 2024-02-04 10:34:03 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.24ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 5243)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:34:19 +1000
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1294)
+
+
+Started GET "/users/10" for ::1 at 2024-02-04 10:34:19 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.15ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 605)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:34:25 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 33ms (ActiveRecord: 1.5ms | Allocations: 26780)
+
+
+Started GET "/users/10" for ::1 at 2024-02-04 10:34:25 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.25ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 5243)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:34:44 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 36ms (ActiveRecord: 1.5ms | Allocations: 26781)
+
+
+Started GET "/users/10" for ::1 at 2024-02-04 10:34:45 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.25ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 5243)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:37:18 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 33ms (ActiveRecord: 1.3ms | Allocations: 26785)
+
+
+Started GET "/users/10" for ::1 at 2024-02-04 10:37:19 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.23ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 5243)
+
+
+Started POST "/users/10/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:38:57 +1000
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"10", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 1296)
+
+
+Started GET "/users/10" for ::1 at 2024-02-04 10:38:57 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 605)
+
+
+Started POST "/users/9/borrowed_books/1610/borrow_book" for ::1 at 2024-02-04 10:39:07 +1000
+Processing by BorrowedBooksController#borrow_book as */*
+  Parameters: {"user_id"=>"9", "book_id"=>1610, "id"=>"1610", "borrowed_book"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:9:in `borrow_book'
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1610], ["LIMIT", 1]]
+  ↳ app/controllers/borrowed_books_controller.rb:10:in `borrow_book'
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1294)
+
+
+Started GET "/users/9" for ::1 at 2024-02-04 10:39:07 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 605)
+
+
+Started GET "/" for ::1 at 2024-02-04 10:39:27 +1000
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.64ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.4ms | Allocations: 16217)
+
+
+Started POST "/users" for ::1 at 2024-02-04 11:07:59 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"7th test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "7th test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 192ms (ActiveRecord: 1.5ms | Allocations: 7599)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveColumnsFromUser (20240204010936)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240204010936') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
