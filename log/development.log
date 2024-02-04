@@ -15397,3 +15397,225 @@ Migrating to RemoveColumnsFromUser (20240204010936)
   [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240204010936') RETURNING "version"[0m
   [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for ::1 at 2024-02-04 11:18:22 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"7th test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "7th test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 204ms (ActiveRecord: 1.6ms | Allocations: 18102)
+
+
+Started POST "/users" for ::1 at 2024-02-04 11:29:28 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"7th test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "7th test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 194ms (ActiveRecord: 1.4ms | Allocations: 18095)
+
+
+Started POST "/users" for ::1 at 2024-02-04 11:29:49 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"7th test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "7th test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 182ms (ActiveRecord: 1.1ms | Allocations: 2272)
+
+
+Started POST "/users" for ::1 at 2024-02-04 11:30:01 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"7th test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "7th test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 197ms (ActiveRecord: 1.6ms | Allocations: 18094)
+
+
+Started POST "/users" for ::1 at 2024-02-04 11:30:10 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"7th test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "7th test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 197ms (ActiveRecord: 1.5ms | Allocations: 18101)
+
+
+Started POST "/users" for ::1 at 2024-02-04 11:30:37 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"7thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "7thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 180ms (ActiveRecord: 0.9ms | Allocations: 2272)
+
+
+Started POST "/users" for ::1 at 2024-02-04 11:32:15 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"8thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "8thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 204ms (ActiveRecord: 1.7ms | Allocations: 18095)
+
+
+Started POST "/users" for ::1 at 2024-02-04 11:33:13 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"8thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "8thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 185ms (ActiveRecord: 1.6ms | Allocations: 6490)
+
+
+Started POST "/users" for ::1 at 2024-02-04 11:47:22 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/users_controller.rb:23: syntax error, unexpected ':', expecting `end' or dummy end
+... redirect_to root_path notice : "Unsuccessful"
+...                              ^
+):
+  
+app/controllers/users_controller.rb:23: syntax error, unexpected ':', expecting `end' or dummy end
+Started POST "/users" for ::1 at 2024-02-04 11:47:50 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/users_controller.rb:23: syntax error, unexpected ':', expecting `end' or dummy end
+... redirect_to root_path notice : "Unsuccessful"
+...                              ^
+/home/jeremy/Assignment/app/controllers/users_controller.rb:40: syntax error, unexpected `end'):
+  
+app/controllers/users_controller.rb:23: syntax error, unexpected ':', expecting `end' or dummy end
+app/controllers/users_controller.rb:40: syntax error, unexpected `end'
+Started POST "/users" for ::1 at 2024-02-04 11:48:31 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/users_controller.rb:23: syntax error, unexpected ':', expecting `end' or dummy end
+...redirect_to root_path, notice : "Unsuccessful"
+...                              ^
+):
+  
+app/controllers/users_controller.rb:23: syntax error, unexpected ':', expecting `end' or dummy end
+Started POST "/users" for ::1 at 2024-02-04 11:51:33 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/users_controller.rb:24: syntax error, unexpected ':', expecting `end' or dummy end
+...redirect_to root_path, notice : "Unsuccessful"
+...                              ^
+):
+  
+app/controllers/users_controller.rb:24: syntax error, unexpected ':', expecting `end' or dummy end
+Started POST "/users" for ::1 at 2024-02-04 11:51:45 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"8thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "8thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 1.5ms | Allocations: 19910)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:22:in `create'
+Started POST "/users" for ::1 at 2024-02-04 11:52:32 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"8thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "8thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 1.9ms | Allocations: 19908)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/jeremy/Assignment/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/usr/share/rvm/gems/ruby-3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/users_controller.rb:22:in `create'
+Started POST "/users" for ::1 at 2024-02-04 11:54:13 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"8thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "8thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2619)
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 36674)
+Completed 200 OK in 349ms (Views: 149.5ms | ActiveRecord: 2.3ms | Allocations: 337353)
+
+
