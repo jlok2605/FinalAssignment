@@ -16585,3 +16585,301 @@ Processing by BooksController#index as */*
 Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 12345)
 
 
+Started POST "/users" for ::1 at 2024-02-05 16:43:19 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"7thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "7thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 199ms (ActiveRecord: 2.1ms | Allocations: 17600)
+
+
+Started GET "/" for ::1 at 2024-02-05 16:43:19 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.29ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.6ms | Allocations: 25877)
+
+
+Started POST "/users" for ::1 at 2024-02-05 16:46:27 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"7thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "7thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 182ms (ActiveRecord: 0.6ms | Allocations: 2275)
+
+
+Started GET "/" for ::1 at 2024-02-05 16:46:27 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.27ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 12348)
+
+
+Started POST "/users" for ::1 at 2024-02-05 16:57:11 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"newuser", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "newuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "admin_number", "created_at", "updated_at", "admin_code", "password_digest") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "newuser"], ["admin_number", nil], ["created_at", "2024-02-05 06:57:11.473932"], ["updated_at", "2024-02-05 06:57:11.473932"], ["admin_code", nil], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (78.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/11
+Completed 302 Found in 260ms (ActiveRecord: 79.7ms | Allocations: 4136)
+
+
+Started GET "/users/11" for ::1 at 2024-02-05 16:57:11 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.32ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 9880)
+
+
+Started GET "/users" for ::1 at 2024-02-05 16:57:24 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"newuser", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+No serializer found for resource: #<User id: 1, username: nil, admin_number: nil, created_at: "2024-01-30 07:46:50.970203000 +0000", updated_at: "2024-01-30 07:46:50.970203000 +0000", admin_code: nil, password_digest: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.33ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1534)
+
+
+Started POST "/users" for ::1 at 2024-02-05 16:57:41 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"7thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "7thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 285ms (ActiveRecord: 0.9ms | Allocations: 283045)
+
+
+Started GET "/" for ::1 at 2024-02-05 16:57:42 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.25ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 12382)
+
+
+Started POST "/users" for ::1 at 2024-02-05 16:57:51 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"7thtest", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "7thtest"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "admin_number", "created_at", "updated_at", "admin_code", "password_digest") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "7thtest"], ["admin_number", nil], ["created_at", "2024-02-05 06:57:51.194932"], ["updated_at", "2024-02-05 06:57:51.194932"], ["admin_code", nil], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/12
+Completed 302 Found in 178ms (ActiveRecord: 0.7ms | Allocations: 2403)
+
+
+Started GET "/users/12" for ::1 at 2024-02-05 16:57:51 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 607)
+
+
+Started POST "/books" for ::1 at 2024-02-05 17:03:47 +1000
+Processing by BooksController#create as */*
+  Parameters: {"books"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"JEREMY LOK", "yearpublished"=>1523, "quanitity"=>2}, "book"=>{}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 550)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<BooksController:0x0000000000bec8>):
+  
+app/controllers/books_controller.rb:33:in `require_admin'
+Started POST "/books" for ::1 at 2024-02-05 17:05:39 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:45: syntax error, unexpected `end'):
+  
+app/controllers/books_controller.rb:45: syntax error, unexpected `end'
+Started POST "/books" for ::1 at 2024-02-05 17:05:59 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:45: syntax error, unexpected `end'):
+  
+app/controllers/books_controller.rb:45: syntax error, unexpected `end'
+Started POST "/books" for ::1 at 2024-02-05 17:10:06 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:46: syntax error, unexpected `end'):
+  
+app/controllers/books_controller.rb:46: syntax error, unexpected `end'
+Started POST "/books" for ::1 at 2024-02-05 17:10:25 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:46: syntax error, unexpected `end'):
+  
+app/controllers/books_controller.rb:46: syntax error, unexpected `end'
+Started POST "/books" for ::1 at 2024-02-05 17:10:36 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#create as */*
+  Parameters: {"books"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"JEREMY LOK", "yearpublished"=>1523, "quanitity"=>2}, "book"=>{}}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.8ms | Allocations: 1395)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: book):
+  
+app/controllers/books_controller.rb:38:in `book_params'
+app/controllers/books_controller.rb:17:in `create'
+Started POST "/books" for ::1 at 2024-02-05 17:11:11 +1000
+Processing by BooksController#create as */*
+  Parameters: {"books"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"JEREMY LOK", "yearpublished"=>1523, "quantity"=>2}, "book"=>{}}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 507)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: book):
+  
+app/controllers/books_controller.rb:38:in `book_params'
+app/controllers/books_controller.rb:17:in `create'
+Started POST "/books" for ::1 at 2024-02-05 17:11:56 +1000
+Processing by BooksController#create as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"JEREMY LOK", "yearpublished"=>1523, "quantity"=>2}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.2ms | Allocations: 17651)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Author(#24700) expected, got "JEREMY LOK" which is an instance of String(#2580)):
+  
+app/controllers/books_controller.rb:17:in `create'
+Started POST "/books" for ::1 at 2024-02-05 17:12:19 +1000
+Processing by BooksController#create as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 640)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Author(#24700) expected, got "me" which is an instance of String(#2580)):
+  
+app/controllers/books_controller.rb:17:in `create'
+Started POST "/books" for ::1 at 2024-02-05 17:12:32 +1000
+Processing by BooksController#create as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"mete", "yearpublished"=>1523, "quantity"=>2}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 639)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Author(#24700) expected, got "mete" which is an instance of String(#2580)):
+  
+app/controllers/books_controller.rb:17:in `create'
+Started POST "/books" for ::1 at 2024-02-05 17:31:01 +1000
+Processing by BooksController#create as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author_id"=>"2", "yearpublished"=>1523, "quantity"=>2}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :author_id. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f1f685632c0>, params: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author_id"=>"2", "yearpublished"=>1523, "quantity"=>2}, "controller"=>"books", "action"=>"create"} }[0m
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms | Allocations: 1885)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Author must exist):
+  
+app/controllers/books_controller.rb:17:in `create'
+Started POST "/books" for ::1 at 2024-02-05 17:31:16 +1000
+Processing by BooksController#create as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 640)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Author(#24700) expected, got "me" which is an instance of String(#2580)):
+  
+app/controllers/books_controller.rb:17:in `create'
+Started GET "/books" for ::1 at 2024-02-05 17:35:54 +1000
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.68ms)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 0.8ms | Allocations: 19589)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeleteBookFromAuthors (20240205074339)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240205074339') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnToAuthors (20240205074540)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240205074540') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnOfNamesToAuthors (20240205074811)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "authors" ADD "name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240205074811') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveBookColumnFromAuthors (20240205075130)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aauthors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "books" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aauthors" ("id","books","created_at","updated_at","name")
+                     SELECT "id","books","created_at","updated_at","name" FROM "authors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "authors"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "authors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "authors" ("id","created_at","updated_at","name")
+                     SELECT "id","created_at","updated_at","name" FROM "aauthors"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aauthors"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240205075130') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

@@ -7,7 +7,9 @@ class UsersController < ApplicationController
       if @user.save
         redirect_to user_path(@user),notice: 'USer created successfully'
       else
+        puts 'NOT WORKING!!!'
         redirect_to root_path
+      
       end
     end
   
