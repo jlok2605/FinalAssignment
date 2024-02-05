@@ -12,6 +12,9 @@ useEffect (()=> {
   return (
     <div className='App'>
       <h1>Books:</h1>
+      <div id ='books'>
+        {books.map((book,index)=><BookInfo book = {book} key = {index}/>)}
+      </div>
     </div>
   )
 
