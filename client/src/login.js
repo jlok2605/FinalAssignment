@@ -1,22 +1,44 @@
-import React, {useState, useEffect} from react 
+import React, {useState} from react 
 
-function Login(){
+function Login(onLogin){
     const [usernameInput, setUsernameInput] = useState ("");
-    const submitForm = e => {
-        e.preventDefault()
+    const [passwordInput, setPasswordInput] = useState ("");
 
-    }
+    const submitForm = e => {
+        e.preventDefault();
+    fetch('/login', {
+        method:"POST",
+        headers: {
+            "Accept" : "application/json",
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify ({username: usernameInput})
+        .then(response => response.json())
+        .then(json => onLogin(json))
+    })
+}
     return (
         <form onSubmit = {submitForm}>
-            <label for = 'username'>Username:</label>
-            <input type="text" id = 'username' name = 'username' value = {usernameInput}onChange ={(e) =>
-            {setUsernameInput (e.target.value)}} /> 
+            <label HTMLfor = 'username'>Username:</label>
+            <input 
+                type="text" 
+                id = 'username' 
+                name = 'username' 
+                value = {usernameInput}
+                onChange ={(e) =>
+                {setUsernameInput (e.target.value)}} /> 
 
             <br/>
+
             <label for = 'password'>Password:</label>
-            <input type = "text" id = 'password' name = 'password' value = {passwordInput} onChange = {(e) =>
-            {setPasswordInput (e.target.value)}}/>
+            <input 
+                type = "password" 
+                id = 'password' 
+                name = 'password' 
+                value = {passwordInput} onChange = {(e) =>
+                {setPasswordInput (e.target.value)}}/>
             <br/>
+
             <button type = "submit">Login</button>
 
         </form>
