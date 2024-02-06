@@ -30350,3 +30350,828 @@ Processing by UsersController#index as */*
 Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 1.1ms | Allocations: 4646)
 
 
+Started GET "/users" for ::1 at 2024-02-06 15:37:20 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 9ms (Views: 3.7ms | ActiveRecord: 1.2ms | Allocations: 4646)
+
+
+Started POST "/users" for ::1 at 2024-02-06 15:37:24 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1234"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 211ms (ActiveRecord: 1.5ms | Allocations: 15200)
+
+
+Started GET "/" for ::1 at 2024-02-06 15:37:24 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1831)
+
+
+Started GET "/users" for ::1 at 2024-02-06 16:29:29 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 0.6ms | Allocations: 4646)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for ::1 at 2024-02-06 16:30:53 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "book"=>{}}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 1.1ms | Allocations: 4189)
+
+
+Started GET "/books" for ::1 at 2024-02-06 16:30:59 +1000
+Processing by BooksController#index as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "book"=>{}}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 735)
+
+
+Started GET "/books" for ::1 at 2024-02-06 16:40:53 +1000
+Error occurred while parsing request parameters.
+Contents:
+
+
+
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.8ms | Allocations: 1686)
+
+
+Started GET "/" for ::1 at 2024-02-06 16:42:46 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 11ms (Views: 2.3ms | ActiveRecord: 0.6ms | Allocations: 10617)
+
+
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "All Passion Spent"], ["genre", "Tall tale"], ["yearpublished", 2017], ["created_at", "2024-02-06 07:54:09.892854"], ["updated_at", "2024-02-06 07:54:09.892854"], ["quantity", 5], ["author_id", 2]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Ego Dominus Tuus"], ["genre", "Science fiction"], ["yearpublished", 1811], ["created_at", "2024-02-06 07:54:09.897728"], ["updated_at", "2024-02-06 07:54:09.897728"], ["quantity", 1], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "In a Glass Darkly"], ["genre", "Fantasy"], ["yearpublished", 1612], ["created_at", "2024-02-06 07:54:09.899034"], ["updated_at", "2024-02-06 07:54:09.899034"], ["quantity", 5], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Time To Murder And Create"], ["genre", "Realistic fiction"], ["yearpublished", 1618], ["created_at", "2024-02-06 07:54:09.900220"], ["updated_at", "2024-02-06 07:54:09.900220"], ["quantity", 2], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Precious Bane"], ["genre", "Crime/Detective"], ["yearpublished", 1752], ["created_at", "2024-02-06 07:54:09.901651"], ["updated_at", "2024-02-06 07:54:09.901651"], ["quantity", 4], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Far-Distant Oxus"], ["genre", "Narrative nonfiction"], ["yearpublished", 1754], ["created_at", "2024-02-06 07:54:09.902910"], ["updated_at", "2024-02-06 07:54:09.902910"], ["quantity", 5], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Green Bay Tree"], ["genre", "Fiction in verse"], ["yearpublished", 1920], ["created_at", "2024-02-06 07:54:09.904142"], ["updated_at", "2024-02-06 07:54:09.904142"], ["quantity", 4], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Golden Bowl"], ["genre", "Humor"], ["yearpublished", 1904], ["created_at", "2024-02-06 07:54:09.905273"], ["updated_at", "2024-02-06 07:54:09.905273"], ["quantity", 1], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Wind's Twelve Quarters"], ["genre", "Fiction in verse"], ["yearpublished", 1893], ["created_at", "2024-02-06 07:54:09.906417"], ["updated_at", "2024-02-06 07:54:09.906417"], ["quantity", 4], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Fear and Trembling"], ["genre", "Mystery"], ["yearpublished", 1707], ["created_at", "2024-02-06 07:54:09.907640"], ["updated_at", "2024-02-06 07:54:09.907640"], ["quantity", 2], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Stars' Tennis Balls"], ["genre", "Comic/Graphic Novel"], ["yearpublished", 1666], ["created_at", "2024-02-06 07:54:09.908781"], ["updated_at", "2024-02-06 07:54:09.908781"], ["quantity", 4], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "What's Become of Waring"], ["genre", "Realistic fiction"], ["yearpublished", 1589], ["created_at", "2024-02-06 07:54:09.909911"], ["updated_at", "2024-02-06 07:54:09.909911"], ["quantity", 1], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "An Instant In The Wind"], ["genre", "Essay"], ["yearpublished", 1504], ["created_at", "2024-02-06 07:54:09.911077"], ["updated_at", "2024-02-06 07:54:09.911077"], ["quantity", 3], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (5.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Ah, Wilderness!"], ["genre", "Reference book"], ["yearpublished", 1984], ["created_at", "2024-02-06 07:54:09.912253"], ["updated_at", "2024-02-06 07:54:09.912253"], ["quantity", 1], ["author_id", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Last Temptation"], ["genre", "Metafiction"], ["yearpublished", 1707], ["created_at", "2024-02-06 07:54:09.918121"], ["updated_at", "2024-02-06 07:54:09.918121"], ["quantity", 4], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Look Homeward, Angel"], ["genre", "Biography/Autobiography"], ["yearpublished", 1606], ["created_at", "2024-02-06 07:54:09.919303"], ["updated_at", "2024-02-06 07:54:09.919303"], ["quantity", 4], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Edna O'Brien"], ["genre", "Realistic fiction"], ["yearpublished", 1563], ["created_at", "2024-02-06 07:54:09.920860"], ["updated_at", "2024-02-06 07:54:09.920860"], ["quantity", 1], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Stranger in a Strange Land"], ["genre", "Classic"], ["yearpublished", 1549], ["created_at", "2024-02-06 07:54:09.922357"], ["updated_at", "2024-02-06 07:54:09.922357"], ["quantity", 1], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "For a Breath I Tarry"], ["genre", "Textbook"], ["yearpublished", 2000], ["created_at", "2024-02-06 07:54:09.923732"], ["updated_at", "2024-02-06 07:54:09.923732"], ["quantity", 4], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "To Say Nothing of the Dog"], ["genre", "Textbook"], ["yearpublished", 1777], ["created_at", "2024-02-06 07:54:09.925207"], ["updated_at", "2024-02-06 07:54:09.925207"], ["quantity", 1], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "A Darkling Plain"], ["genre", "Biography/Autobiography"], ["yearpublished", 1710], ["created_at", "2024-02-06 07:54:09.926309"], ["updated_at", "2024-02-06 07:54:09.926309"], ["quantity", 5], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "After Many a Summer Dies the Swan"], ["genre", "Tall tale"], ["yearpublished", 1500], ["created_at", "2024-02-06 07:54:09.927689"], ["updated_at", "2024-02-06 07:54:09.927689"], ["quantity", 3], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "A Handful of Dust"], ["genre", "Horror"], ["yearpublished", 1578], ["created_at", "2024-02-06 07:54:09.929051"], ["updated_at", "2024-02-06 07:54:09.929051"], ["quantity", 1], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Now Sleeps the Crimson Petal"], ["genre", "Fable"], ["yearpublished", 1698], ["created_at", "2024-02-06 07:54:09.930183"], ["updated_at", "2024-02-06 07:54:09.930183"], ["quantity", 4], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Green Bay Tree"], ["genre", "Biography/Autobiography"], ["yearpublished", 2003], ["created_at", "2024-02-06 07:54:09.931607"], ["updated_at", "2024-02-06 07:54:09.931607"], ["quantity", 1], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Edna O'Brien"], ["genre", "Mythology"], ["yearpublished", 1698], ["created_at", "2024-02-06 07:54:09.932715"], ["updated_at", "2024-02-06 07:54:09.932715"], ["quantity", 1], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Everything is Illuminated"], ["genre", "Tall tale"], ["yearpublished", 1768], ["created_at", "2024-02-06 07:54:09.934015"], ["updated_at", "2024-02-06 07:54:09.934015"], ["quantity", 1], ["author_id", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Heart Is Deceitful Above All Things"], ["genre", "Fiction in verse"], ["yearpublished", 1895], ["created_at", "2024-02-06 07:54:09.935235"], ["updated_at", "2024-02-06 07:54:09.935235"], ["quantity", 1], ["author_id", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "East of Eden"], ["genre", "Humor"], ["yearpublished", 1556], ["created_at", "2024-02-06 07:54:09.937023"], ["updated_at", "2024-02-06 07:54:09.937023"], ["quantity", 5], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "A Swiftly Tilting Planet"], ["genre", "Textbook"], ["yearpublished", 1701], ["created_at", "2024-02-06 07:54:09.938386"], ["updated_at", "2024-02-06 07:54:09.938386"], ["quantity", 3], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Widening Gyre"], ["genre", "Reference book"], ["yearpublished", 1778], ["created_at", "2024-02-06 07:54:09.939858"], ["updated_at", "2024-02-06 07:54:09.939858"], ["quantity", 5], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Have His Carcase"], ["genre", "Textbook"], ["yearpublished", 1921], ["created_at", "2024-02-06 07:54:09.941196"], ["updated_at", "2024-02-06 07:54:09.941196"], ["quantity", 4], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "From Here to Eternity"], ["genre", "Mystery"], ["yearpublished", 1918], ["created_at", "2024-02-06 07:54:09.942765"], ["updated_at", "2024-02-06 07:54:09.942765"], ["quantity", 5], ["author_id", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "A Catskill Eagle"], ["genre", "Science fiction"], ["yearpublished", 1578], ["created_at", "2024-02-06 07:54:09.944055"], ["updated_at", "2024-02-06 07:54:09.944055"], ["quantity", 5], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Recalled to Life"], ["genre", "Short story"], ["yearpublished", 1812], ["created_at", "2024-02-06 07:54:09.945216"], ["updated_at", "2024-02-06 07:54:09.945216"], ["quantity", 5], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Have His Carcase"], ["genre", "Fantasy"], ["yearpublished", 1696], ["created_at", "2024-02-06 07:54:09.946341"], ["updated_at", "2024-02-06 07:54:09.946341"], ["quantity", 2], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Wings of the Dove"], ["genre", "Textbook"], ["yearpublished", 1657], ["created_at", "2024-02-06 07:54:09.947697"], ["updated_at", "2024-02-06 07:54:09.947697"], ["quantity", 2], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Blue Remembered Earth"], ["genre", "Speech"], ["yearpublished", 2011], ["created_at", "2024-02-06 07:54:09.948784"], ["updated_at", "2024-02-06 07:54:09.948784"], ["quantity", 4], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Painted Veil"], ["genre", "Fiction in verse"], ["yearpublished", 1761], ["created_at", "2024-02-06 07:54:09.950003"], ["updated_at", "2024-02-06 07:54:09.950003"], ["quantity", 2], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "As I Lay Dying"], ["genre", "Fairy tale"], ["yearpublished", 1508], ["created_at", "2024-02-06 07:54:09.951064"], ["updated_at", "2024-02-06 07:54:09.951064"], ["quantity", 4], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Fame Is the Spur"], ["genre", "Fairy tale"], ["yearpublished", 1896], ["created_at", "2024-02-06 07:54:09.952283"], ["updated_at", "2024-02-06 07:54:09.952283"], ["quantity", 1], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Way of All Flesh"], ["genre", "Realistic fiction"], ["yearpublished", 1742], ["created_at", "2024-02-06 07:54:09.953492"], ["updated_at", "2024-02-06 07:54:09.953492"], ["quantity", 2], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Violent Bear It Away"], ["genre", "Fairy tale"], ["yearpublished", 1960], ["created_at", "2024-02-06 07:54:09.954977"], ["updated_at", "2024-02-06 07:54:09.954977"], ["quantity", 5], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Ah, Wilderness!"], ["genre", "Historical fiction"], ["yearpublished", 1539], ["created_at", "2024-02-06 07:54:09.956792"], ["updated_at", "2024-02-06 07:54:09.956792"], ["quantity", 4], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "After Many a Summer Dies the Swan"], ["genre", "Short story"], ["yearpublished", 1966], ["created_at", "2024-02-06 07:54:09.957962"], ["updated_at", "2024-02-06 07:54:09.957962"], ["quantity", 3], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "A Catskill Eagle"], ["genre", "Legend"], ["yearpublished", 1848], ["created_at", "2024-02-06 07:54:09.959437"], ["updated_at", "2024-02-06 07:54:09.959437"], ["quantity", 2], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Stars' Tennis Balls"], ["genre", "Comic/Graphic Novel"], ["yearpublished", 1975], ["created_at", "2024-02-06 07:54:09.960838"], ["updated_at", "2024-02-06 07:54:09.960838"], ["quantity", 2], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Time To Murder And Create"], ["genre", "Speech"], ["yearpublished", 1896], ["created_at", "2024-02-06 07:54:09.962240"], ["updated_at", "2024-02-06 07:54:09.962240"], ["quantity", 4], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "After Many a Summer Dies the Swan"], ["genre", "Fiction in verse"], ["yearpublished", 1576], ["created_at", "2024-02-06 07:54:09.963593"], ["updated_at", "2024-02-06 07:54:09.963593"], ["quantity", 5], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "This Lime Tree Bower"], ["genre", "Speech"], ["yearpublished", 1955], ["created_at", "2024-02-06 07:54:09.964677"], ["updated_at", "2024-02-06 07:54:09.964677"], ["quantity", 5], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Ring of Bright Water"], ["genre", "Metafiction"], ["yearpublished", 1895], ["created_at", "2024-02-06 07:54:09.965885"], ["updated_at", "2024-02-06 07:54:09.965885"], ["quantity", 5], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Moon by Night"], ["genre", "Legend"], ["yearpublished", 1594], ["created_at", "2024-02-06 07:54:09.967038"], ["updated_at", "2024-02-06 07:54:09.967038"], ["quantity", 4], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Many Waters"], ["genre", "Suspense/Thriller"], ["yearpublished", 1682], ["created_at", "2024-02-06 07:54:09.968089"], ["updated_at", "2024-02-06 07:54:09.968089"], ["quantity", 5], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Mother Night"], ["genre", "Speech"], ["yearpublished", 1559], ["created_at", "2024-02-06 07:54:09.970563"], ["updated_at", "2024-02-06 07:54:09.970563"], ["quantity", 4], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Everything is Illuminated"], ["genre", "Historical fiction"], ["yearpublished", 1585], ["created_at", "2024-02-06 07:54:09.971741"], ["updated_at", "2024-02-06 07:54:09.971741"], ["quantity", 4], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Lathe of Heaven"], ["genre", "Folklore"], ["yearpublished", 1857], ["created_at", "2024-02-06 07:54:09.973095"], ["updated_at", "2024-02-06 07:54:09.973095"], ["quantity", 1], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Oh! To be in England"], ["genre", "Reference book"], ["yearpublished", 1574], ["created_at", "2024-02-06 07:54:09.974476"], ["updated_at", "2024-02-06 07:54:09.974476"], ["quantity", 2], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Unweaving the Rainbow"], ["genre", "Short story"], ["yearpublished", 1686], ["created_at", "2024-02-06 07:54:09.976115"], ["updated_at", "2024-02-06 07:54:09.976115"], ["quantity", 3], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Violent Bear It Away"], ["genre", "Science fiction"], ["yearpublished", 1869], ["created_at", "2024-02-06 07:54:09.977463"], ["updated_at", "2024-02-06 07:54:09.977463"], ["quantity", 4], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Mermaids Singing"], ["genre", "Classic"], ["yearpublished", 1846], ["created_at", "2024-02-06 07:54:09.978777"], ["updated_at", "2024-02-06 07:54:09.978777"], ["quantity", 3], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Look to Windward"], ["genre", "Comic/Graphic Novel"], ["yearpublished", 1515], ["created_at", "2024-02-06 07:54:09.979945"], ["updated_at", "2024-02-06 07:54:09.979945"], ["quantity", 5], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The World, the Flesh and the Devil"], ["genre", "Narrative nonfiction"], ["yearpublished", 1950], ["created_at", "2024-02-06 07:54:09.981230"], ["updated_at", "2024-02-06 07:54:09.981230"], ["quantity", 4], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "For Whom the Bell Tolls"], ["genre", "Fable"], ["yearpublished", 1620], ["created_at", "2024-02-06 07:54:09.982356"], ["updated_at", "2024-02-06 07:54:09.982356"], ["quantity", 5], ["author_id", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Endless Night"], ["genre", "Science fiction"], ["yearpublished", 2023], ["created_at", "2024-02-06 07:54:09.983717"], ["updated_at", "2024-02-06 07:54:09.983717"], ["quantity", 3], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Moving Toyshop"], ["genre", "Essay"], ["yearpublished", 1567], ["created_at", "2024-02-06 07:54:09.984786"], ["updated_at", "2024-02-06 07:54:09.984786"], ["quantity", 3], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Mirror Crack'd from Side to Side"], ["genre", "Mystery"], ["yearpublished", 1998], ["created_at", "2024-02-06 07:54:09.986065"], ["updated_at", "2024-02-06 07:54:09.986065"], ["quantity", 3], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Death Be Not Proud"], ["genre", "Science fiction"], ["yearpublished", 1755], ["created_at", "2024-02-06 07:54:09.987173"], ["updated_at", "2024-02-06 07:54:09.987173"], ["quantity", 1], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "If Not Now, When?"], ["genre", "Reference book"], ["yearpublished", 1997], ["created_at", "2024-02-06 07:54:09.988521"], ["updated_at", "2024-02-06 07:54:09.988521"], ["quantity", 3], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Cover Her Face"], ["genre", "Humor"], ["yearpublished", 1692], ["created_at", "2024-02-06 07:54:09.989925"], ["updated_at", "2024-02-06 07:54:09.989925"], ["quantity", 1], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Such, Such Were the Joys"], ["genre", "Crime/Detective"], ["yearpublished", 1680], ["created_at", "2024-02-06 07:54:09.991405"], ["updated_at", "2024-02-06 07:54:09.991405"], ["quantity", 4], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Cover Her Face"], ["genre", "Mythopoeia"], ["yearpublished", 2010], ["created_at", "2024-02-06 07:54:09.992736"], ["updated_at", "2024-02-06 07:54:09.992736"], ["quantity", 3], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Way Through the Woods"], ["genre", "Speech"], ["yearpublished", 1638], ["created_at", "2024-02-06 07:54:09.993839"], ["updated_at", "2024-02-06 07:54:09.993839"], ["quantity", 5], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Fame Is the Spur"], ["genre", "Biography/Autobiography"], ["yearpublished", 1660], ["created_at", "2024-02-06 07:54:09.995596"], ["updated_at", "2024-02-06 07:54:09.995596"], ["quantity", 4], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Dance Dance Dance"], ["genre", "Historical fiction"], ["yearpublished", 2003], ["created_at", "2024-02-06 07:54:09.996697"], ["updated_at", "2024-02-06 07:54:09.996697"], ["quantity", 5], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "To Say Nothing of the Dog"], ["genre", "Metafiction"], ["yearpublished", 1926], ["created_at", "2024-02-06 07:54:09.998073"], ["updated_at", "2024-02-06 07:54:09.998073"], ["quantity", 5], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "A Darkling Plain"], ["genre", "Humor"], ["yearpublished", 1740], ["created_at", "2024-02-06 07:54:09.999152"], ["updated_at", "2024-02-06 07:54:09.999152"], ["quantity", 2], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "For a Breath I Tarry"], ["genre", "Speech"], ["yearpublished", 1924], ["created_at", "2024-02-06 07:54:10.000414"], ["updated_at", "2024-02-06 07:54:10.000414"], ["quantity", 2], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Cabbages and Kings"], ["genre", "Essay"], ["yearpublished", 1747], ["created_at", "2024-02-06 07:54:10.001748"], ["updated_at", "2024-02-06 07:54:10.001748"], ["quantity", 5], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Wives of Bath"], ["genre", "Western"], ["yearpublished", 1749], ["created_at", "2024-02-06 07:54:10.002903"], ["updated_at", "2024-02-06 07:54:10.002903"], ["quantity", 2], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Behold the Man"], ["genre", "Legend"], ["yearpublished", 2024], ["created_at", "2024-02-06 07:54:10.003941"], ["updated_at", "2024-02-06 07:54:10.003941"], ["quantity", 3], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Consider Phlebas"], ["genre", "Essay"], ["yearpublished", 1557], ["created_at", "2024-02-06 07:54:10.005242"], ["updated_at", "2024-02-06 07:54:10.005242"], ["quantity", 2], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Line of Beauty"], ["genre", "Realistic fiction"], ["yearpublished", 1862], ["created_at", "2024-02-06 07:54:10.006399"], ["updated_at", "2024-02-06 07:54:10.006399"], ["quantity", 3], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Many Waters"], ["genre", "Metafiction"], ["yearpublished", 1987], ["created_at", "2024-02-06 07:54:10.007731"], ["updated_at", "2024-02-06 07:54:10.007731"], ["quantity", 2], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Alone on a Wide, Wide Sea"], ["genre", "Essay"], ["yearpublished", 1685], ["created_at", "2024-02-06 07:54:10.008816"], ["updated_at", "2024-02-06 07:54:10.008816"], ["quantity", 5], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Behold the Man"], ["genre", "Essay"], ["yearpublished", 1890], ["created_at", "2024-02-06 07:54:10.010098"], ["updated_at", "2024-02-06 07:54:10.010098"], ["quantity", 1], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Soldier's Art"], ["genre", "Comic/Graphic Novel"], ["yearpublished", 1856], ["created_at", "2024-02-06 07:54:10.011386"], ["updated_at", "2024-02-06 07:54:10.011386"], ["quantity", 4], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "I Sing the Body Electric"], ["genre", "Fiction narrative"], ["yearpublished", 1823], ["created_at", "2024-02-06 07:54:10.012611"], ["updated_at", "2024-02-06 07:54:10.012611"], ["quantity", 1], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Sun Also Rises"], ["genre", "Historical fiction"], ["yearpublished", 1902], ["created_at", "2024-02-06 07:54:10.014378"], ["updated_at", "2024-02-06 07:54:10.014378"], ["quantity", 2], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "A Summer Bird-Cage"], ["genre", "Metafiction"], ["yearpublished", 1773], ["created_at", "2024-02-06 07:54:10.015485"], ["updated_at", "2024-02-06 07:54:10.015485"], ["quantity", 2], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The World, the Flesh and the Devil"], ["genre", "Mythopoeia"], ["yearpublished", 1932], ["created_at", "2024-02-06 07:54:10.017284"], ["updated_at", "2024-02-06 07:54:10.017284"], ["quantity", 3], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Tender Is the Night"], ["genre", "Legend"], ["yearpublished", 1645], ["created_at", "2024-02-06 07:54:10.018602"], ["updated_at", "2024-02-06 07:54:10.018602"], ["quantity", 5], ["author_id", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Glory and the Dream"], ["genre", "Metafiction"], ["yearpublished", 1602], ["created_at", "2024-02-06 07:54:10.019811"], ["updated_at", "2024-02-06 07:54:10.019811"], ["quantity", 5], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Heart Is Deceitful Above All Things"], ["genre", "Legend"], ["yearpublished", 1524], ["created_at", "2024-02-06 07:54:10.021392"], ["updated_at", "2024-02-06 07:54:10.021392"], ["quantity", 2], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Wings of the Dove"], ["genre", "Speech"], ["yearpublished", 2013], ["created_at", "2024-02-06 07:54:10.022622"], ["updated_at", "2024-02-06 07:54:10.022622"], ["quantity", 4], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Butter In a Lordly Dish"], ["genre", "Metafiction"], ["yearpublished", 1509], ["created_at", "2024-02-06 07:54:10.023955"], ["updated_at", "2024-02-06 07:54:10.023955"], ["quantity", 2], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "An Instant In The Wind"], ["genre", "Fable"], ["yearpublished", 1871], ["created_at", "2024-02-06 07:54:10.025053"], ["updated_at", "2024-02-06 07:54:10.025053"], ["quantity", 4], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "This Lime Tree Bower"], ["genre", "Classic"], ["yearpublished", 1875], ["created_at", "2024-02-06 07:54:10.026281"], ["updated_at", "2024-02-06 07:54:10.026281"], ["quantity", 4], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Recalled to Life"], ["genre", "Fanfiction"], ["yearpublished", 1690], ["created_at", "2024-02-06 07:54:10.027502"], ["updated_at", "2024-02-06 07:54:10.027502"], ["quantity", 5], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Great Work of Time"], ["genre", "Biography/Autobiography"], ["yearpublished", 1967], ["created_at", "2024-02-06 07:54:10.028590"], ["updated_at", "2024-02-06 07:54:10.028590"], ["quantity", 1], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "genre", "yearpublished", "created_at", "updated_at", "quantity", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Nectar in a Sieve"], ["genre", "Fanfiction"], ["yearpublished", 1542], ["created_at", "2024-02-06 07:54:10.029915"], ["updated_at", "2024-02-06 07:54:10.029915"], ["quantity", 1], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/users" for ::1 at 2024-02-06 18:05:44 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Tester1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Tester1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 197ms (ActiveRecord: 1.5ms | Allocations: 17580)
+
+
+Started GET "/" for ::1 at 2024-02-06 18:05:45 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.93ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms | Allocations: 18093)
+
+
+  
+NoMethodError (undefined method `author' for #<Book id: 1, title: "All Passion Spent", genre: "Tall tale", yearpublished: 2017, created_at: "2024-02-06 07:54:09.892854000 +0000", updated_at: "2024-02-06 07:54:09.892854000 +0000", quantity: 5, author_id: 2>):
+  
+app/controllers/books_controller.rb:8:in `index'
+Started POST "/users" for ::1 at 2024-02-06 18:06:27 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Tester1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Tester1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 200ms (ActiveRecord: 1.4ms | Allocations: 17584)
+
+
+Started GET "/" for ::1 at 2024-02-06 18:06:27 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms | Allocations: 18063)
+
+
+  
+NoMethodError (undefined method `author' for #<Book id: 1, title: "All Passion Spent", genre: "Tall tale", yearpublished: 2017, created_at: "2024-02-06 07:54:09.892854000 +0000", updated_at: "2024-02-06 07:54:09.892854000 +0000", quantity: 5, author_id: 2>):
+  
+app/controllers/books_controller.rb:8:in `index'
+Started POST "/users" for ::1 at 2024-02-06 18:08:46 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Tester1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Tester1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 192ms (ActiveRecord: 1.6ms | Allocations: 17594)
+
+
+Started GET "/" for ::1 at 2024-02-06 18:08:46 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mAuthor Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mAuthor Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mAuthor Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mAuthor Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mAuthor Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mAuthor Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mAuthor Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (80.15ms)
+Completed 200 OK in 96ms (Views: 91.8ms | ActiveRecord: 1.4ms | Allocations: 105272)
+
+
+Started GET "/users" for ::1 at 2024-02-06 18:08:51 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"Tester1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.03ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 831)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/users" for ::1 at 2024-02-06 18:09:25 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Tester1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Tester1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "admin_number", "created_at", "updated_at", "admin_code", "password_digest") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "Tester1"], ["admin_number", nil], ["created_at", "2024-02-06 08:09:25.925504"], ["updated_at", "2024-02-06 08:09:25.925504"], ["admin_code", nil], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 206ms (ActiveRecord: 4.9ms | Allocations: 19161)
+
+
+Started GET "/users/1" for ::1 at 2024-02-06 18:09:25 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.9ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 5973)
+
+
+Started GET "/users" for ::1 at 2024-02-06 18:09:29 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"Tester1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+No serializer found for resource: #<User id: 1, username: "Tester1", admin_number: nil, created_at: "2024-02-06 08:09:25.925504000 +0000", updated_at: "2024-02-06 08:09:25.925504000 +0000", admin_code: nil, password_digest: [FILTERED]>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.07ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1200)
+
+
+Started GET "/users" for ::1 at 2024-02-06 18:21:27 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"Tester2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+No serializer found for resource: #<User id: 1, username: "Tester1", admin_number: nil, created_at: "2024-02-06 08:09:25.925504000 +0000", updated_at: "2024-02-06 08:09:25.925504000 +0000", admin_code: nil, password_digest: [FILTERED]>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.09ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 1135)
+
+
+Started POST "/users" for ::1 at 2024-02-06 18:21:30 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Tester2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Tester2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "admin_number", "created_at", "updated_at", "admin_code", "password_digest") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "Tester2"], ["admin_number", nil], ["created_at", "2024-02-06 08:21:30.716800"], ["updated_at", "2024-02-06 08:21:30.716800"], ["admin_code", nil], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 184ms (ActiveRecord: 2.7ms | Allocations: 2428)
+
+
+Started GET "/users/2" for ::1 at 2024-02-06 18:21:30 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 641)
+
+
+Started POST "/users" for ::1 at 2024-02-06 18:21:33 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Tester3", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Tester3"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "admin_number", "created_at", "updated_at", "admin_code", "password_digest") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "Tester3"], ["admin_number", nil], ["created_at", "2024-02-06 08:21:34.115713"], ["updated_at", "2024-02-06 08:21:34.115713"], ["admin_code", nil], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 182ms (ActiveRecord: 0.7ms | Allocations: 2403)
+
+
+Started GET "/users/3" for ::1 at 2024-02-06 18:21:34 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 605)
+
+
+Started POST "/users" for ::1 at 2024-02-06 18:21:37 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Tester4", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Tester4"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "admin_number", "created_at", "updated_at", "admin_code", "password_digest") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "Tester4"], ["admin_number", nil], ["created_at", "2024-02-06 08:21:37.383544"], ["updated_at", "2024-02-06 08:21:37.383544"], ["admin_code", nil], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 180ms (ActiveRecord: 0.7ms | Allocations: 2407)
+
+
+Started GET "/users/4" for ::1 at 2024-02-06 18:21:37 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 605)
+
+
+Started POST "/users" for ::1 at 2024-02-06 18:21:44 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Tester5", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Tester5"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "admin_number", "created_at", "updated_at", "admin_code", "password_digest") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "Tester5"], ["admin_number", nil], ["created_at", "2024-02-06 08:21:45.111439"], ["updated_at", "2024-02-06 08:21:45.111439"], ["admin_code", nil], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 181ms (ActiveRecord: 0.9ms | Allocations: 2419)
+
+
+Started GET "/users/5" for ::1 at 2024-02-06 18:21:45 +1000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 606)
+
+
