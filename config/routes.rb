@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     resources :borrowed_books, only: [:index]
   end
   root "books#index"
-  post '/login', to: "user#create"
+  post '/login', to: "users#create"
+  post '/signup', to: 'users#create'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
