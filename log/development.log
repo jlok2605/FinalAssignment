@@ -29700,3 +29700,653 @@ Processing by BooksController#index as */*
 Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 13886)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to UpdateNullAuthorsInBooks (20240206005219)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240206005219') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-02-06 10:54:44 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.4ms)
+Completed 200 OK in 45ms (Views: 27.4ms | ActiveRecord: 1.4ms | Allocations: 37352)
+
+
+Started GET "/books" for ::1 at 2024-02-06 10:55:05 +1000
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.55ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 12363)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeAuthorToInt (20240206005602)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240206005602') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAuthorIdBooks (20240206010006)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240206010006') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAuthorIdToBooks (20240206010353)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "books" ADD "author_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240206010353') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for ::1 at 2024-02-06 11:08:12 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.6ms)
+Completed 200 OK in 38ms (Views: 31.8ms | ActiveRecord: 1.5ms | Allocations: 31590)
+
+
+Started GET "/books" for ::1 at 2024-02-06 11:08:44 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.29ms)
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 1.3ms | Allocations: 31590)
+
+
+Started GET "/books" for ::1 at 2024-02-06 11:09:16 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.65ms)
+Completed 200 OK in 35ms (Views: 28.6ms | ActiveRecord: 1.6ms | Allocations: 31723)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "authors"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "authors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "genre" varchar, "author" varchar, "yearpublished" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "quantity" integer, "author_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "borrowed_books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "borrowed_books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "book_title" varchar, "checked_out_at" datetime(6))[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "favouritebooks" varchar, "overduebooks" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "book_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "admin_number" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admin_code" varchar, "password_digest" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240206010353)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240206010006),
+(20240206005602),
+(20240206005219),
+(20240205075130),
+(20240205074811),
+(20240205074540),
+(20240205074339),
+(20240204010936),
+(20240130100254),
+(20240130095532),
+(20240130071502),
+(20240128081102),
+(20240120105750),
+(20240120052426),
+(20240117101353),
+(20240117063039),
+(20240117062459),
+(20240115014706),
+(20240115002512),
+(20240112114443);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-02-06 01:10:18.931584', '2024-02-06 01:10:18.931587') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '642634e6600a30ff07a3f651f5507b7d8f220369', '2024-02-06 01:10:18.933067', '2024-02-06 01:10:18.933068') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "authors"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "authors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "genre" varchar, "author" varchar, "yearpublished" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "quantity" integer, "author_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "borrowed_books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "borrowed_books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "book_title" varchar, "checked_out_at" datetime(6))[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "favouritebooks" varchar, "overduebooks" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "book_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "admin_number" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admin_code" varchar, "password_digest" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240206010353)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240206010006),
+(20240206005602),
+(20240206005219),
+(20240205075130),
+(20240205074811),
+(20240205074540),
+(20240205074339),
+(20240204010936),
+(20240130100254),
+(20240130095532),
+(20240130071502),
+(20240128081102),
+(20240120105750),
+(20240120052426),
+(20240117101353),
+(20240117063039),
+(20240117062459),
+(20240115014706),
+(20240115002512),
+(20240112114443);[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-02-06 01:10:18.954942', '2024-02-06 01:10:18.954945') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2024-02-06 01:10:18.955929' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '642634e6600a30ff07a3f651f5507b7d8f220369', '2024-02-06 01:10:18.957379', '2024-02-06 01:10:18.957380') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/books" for ::1 at 2024-02-06 11:17:07 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 0.8ms | Allocations: 4643)
+
+
+Started GET "/books" for ::1 at 2024-02-06 11:17:38 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 4643)
+
+
+Started GET "/books" for ::1 at 2024-02-06 11:18:00 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 1.2ms | Allocations: 4643)
+
+
+Started GET "/books" for ::1 at 2024-02-06 11:18:11 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 0.9ms | Allocations: 4643)
+
+
+Started GET "/books" for ::1 at 2024-02-06 11:18:42 +1000
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.03ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 735)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveAuthorIdFromBooks (20240206011910)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "genre" varchar DEFAULT NULL, "author" varchar DEFAULT NULL, "yearpublished" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "quantity" integer DEFAULT NULL, "author_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abooks" ("id","title","genre","author","yearpublished","created_at","updated_at","quantity","author_id")
+                     SELECT "id","title","genre","author","yearpublished","created_at","updated_at","quantity","author_id" FROM "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "genre" varchar DEFAULT NULL, "author" varchar DEFAULT NULL, "yearpublished" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "quantity" integer DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "books" ("id","title","genre","author","yearpublished","created_at","updated_at","quantity")
+                     SELECT "id","title","genre","author","yearpublished","created_at","updated_at","quantity" FROM "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240206011910') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for ::1 at 2024-02-06 11:19:58 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 4639)
+
+
+Started GET "/books" for ::1 at 2024-02-06 11:23:12 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 4639)
+
+
+Started GET "/books" for ::1 at 2024-02-06 11:24:23 +1000
+Error occurred while parsing request parameters.
+Contents:
+
+
+
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.03ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 1404)
+
+
+Started GET "/books" for ::1 at 2024-02-06 11:24:27 +1000
+Processing by BooksController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 731)
+
+
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAuthor Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."name" = ? LIMIT ?[0m  [["name", "Tester123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("created_at", "updated_at", "name") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2024-02-06 01:29:06.555557"], ["updated_at", "2024-02-06 01:29:06.555557"], ["name", "Tester123"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAuthor Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."name" = ? LIMIT ?[0m  [["name", "Tester123"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAuthorIdToBooks (20240206013334)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240206013334') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAuthorIdToBook (20240206013644)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "books" ADD "author_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240206013644') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveAuthorFromBooks (20240206014523)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240206014523') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveAuthorFromBook (20240206014747)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240206014747') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2024-02-06 11:56:50 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20240206015108_remove_author_from_bks.rb
+
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:754:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.1) lib/puma/configuration.rb:272:in `call'
+puma (6.4.1) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.1) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.1) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.1) lib/puma/server.rb:464:in `process_client'
+puma (6.4.1) lib/puma/server.rb:245:in `block in run'
+puma (6.4.1) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveAuthorFromBks (20240206015108)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "genre" varchar DEFAULT NULL, "author" varchar DEFAULT NULL, "yearpublished" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "quantity" integer DEFAULT NULL, "author_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abooks" ("id","title","genre","author","yearpublished","created_at","updated_at","quantity","author_id")
+                     SELECT "id","title","genre","author","yearpublished","created_at","updated_at","quantity","author_id" FROM "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "genre" varchar DEFAULT NULL, "yearpublished" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "quantity" integer DEFAULT NULL, "author_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "books" ("id","title","genre","yearpublished","created_at","updated_at","quantity","author_id")
+                     SELECT "id","title","genre","yearpublished","created_at","updated_at","quantity","author_id" FROM "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240206015108') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2024-02-06 11:57:29 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}, "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.8ms | Allocations: 4185)
+
+
+Started POST "/users" for ::1 at 2024-02-06 11:57:35 +1000
+Processing by UsersController#create as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}, "user"=>{}}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 623)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:42:in `user_params'
+app/controllers/users_controller.rb:6:in `create'
+Started GET "/users" for ::1 at 2024-02-06 11:57:40 +1000
+Processing by UsersController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}, "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 735)
+
+
+Started GET "/users" for ::1 at 2024-02-06 11:59:26 +1000
+Processing by UsersController#index as */*
+  Parameters: {"book"=>{"title"=>"testerbook", "genre"=>"Sci-Fi", "author"=>"me", "yearpublished"=>1523, "quantity"=>2}, "user"=>{}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.03ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 730)
+
+
+Started POST "/users" for ::1 at 2024-02-06 12:00:16 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1234"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 195ms (ActiveRecord: 0.8ms | Allocations: 18311)
+
+
+Started GET "/" for ::1 at 2024-02-06 12:00:17 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 2369)
+
+
+Started GET "/users" for ::1 at 2024-02-06 12:00:24 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.03ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 721)
+
+
+Started POST "/users" for ::1 at 2024-02-06 12:00:27 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1234"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 186ms (ActiveRecord: 0.9ms | Allocations: 2260)
+
+
+Started GET "/" for ::1 at 2024-02-06 12:00:27 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 720)
+
+
+Started GET "/users" for ::1 at 2024-02-06 12:01:17 +1000
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 721)
+
+
+Started POST "/users" for ::1 at 2024-02-06 12:01:20 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1234"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 186ms (ActiveRecord: 1.1ms | Allocations: 2245)
+
+
+Started GET "/" for ::1 at 2024-02-06 12:01:20 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 720)
+
+
+Started GET "/users" for ::1 at 2024-02-06 12:01:27 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 1.2ms | Allocations: 4646)
+
+
+Started POST "/users" for ::1 at 2024-02-06 12:01:31 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1234"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 192ms (ActiveRecord: 1.1ms | Allocations: 15215)
+
+
+Started GET "/" for ::1 at 2024-02-06 12:01:31 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 2357)
+
+
+Started POST "/users" for ::1 at 2024-02-06 12:01:50 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1234"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 200ms (ActiveRecord: 1.6ms | Allocations: 17596)
+
+
+Started GET "/" for ::1 at 2024-02-06 12:01:50 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 3714)
+
+
+Started GET "/users" for ::1 at 2024-02-06 12:02:04 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 4646)
+
+
+Started GET "/users" for ::1 at 2024-02-06 12:02:36 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.6ms | Allocations: 4646)
+
+
+Started POST "/users" for ::1 at 2024-02-06 12:02:39 +1000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testing1234"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 196ms (ActiveRecord: 1.5ms | Allocations: 15215)
+
+
+Started GET "/" for ::1 at 2024-02-06 12:02:39 +1000
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.03ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 2362)
+
+
+Started GET "/users" for ::1 at 2024-02-06 12:04:06 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"testing1234", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:34:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 1.1ms | Allocations: 4646)
+
+
