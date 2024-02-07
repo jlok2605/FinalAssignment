@@ -1,29 +1,28 @@
 class UsersController < ApplicationController
-    def new
-        user = User.new
-    end
-    def create
-      user = User.new(user_params)
-      puts user
-        if user.admin_code == '8582' && user.save
-          user.is_admin = true
+  def new
+    user = User.new
+  end
+  def create
+    user = User.new(user_params)
+    puts user
+      if user.admin_code == '8582' && user.save
+        user.is_admin = true
             # redirect_to root_path, notice: "Admin signup successful"\
-            render json: {message: 'admin created'}, status: :created
+        render json: {message: 'admin created'}, status: :created
             
           # Admin-specific logic
           # session[:admin_user_id] = @user.id
         
-        else
-          if user.save
+      else
+        if user.save
           # redirect_to user_path(@user), notice: "User signup successful"
-          render json: {message: 'regular user created'}, status: :created
+        render json: {message: 'regular user created'}, status: :created
         
-          else
+        else
         # Save failed
-          flash.now[:alert] = 'Failed to create user. Please check the form for errors.'
-          render json: {error: 'User not created'}. status: :
+        render json: {error: 'User not created'}, status: :not_created
+        end
       end
-    end
   end
     
   def show

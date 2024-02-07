@@ -36,6 +36,6 @@ class BooksController < ApplicationController
     end
 
     def authorize_admin
-        return render json: {error: "Only admin users permitted"}, status: :unauthorized unless session.is_admin
+        return render json: {error: "Only admin users permitted"}, status: :unauthorized unless session [:is_admin]
     end
 end
