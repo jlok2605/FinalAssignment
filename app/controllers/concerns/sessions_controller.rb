@@ -1,16 +1,15 @@
 class SessionsController < ApplicationController
     def create
         user = User.find_by(username: params[:username])
-        if user
+
             session [:user_id] = user.id
-            render json: user
-        else
-            render json: {error: 'Invalid Username'}, status: :unprocessable
-        end
+            session [:is_admin] = user.is_admin
+            render json: user, status: :o
     end
     
     def destroy
         session.delete :user_id
+        session.delete :is_admin
         head :no_content
     end
 
