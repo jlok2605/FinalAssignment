@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     
     def create
         book = Book.create! (book_params)
-        render json: book, status:created
+        render json: book, status: :ok
     end
     
     def destroy
