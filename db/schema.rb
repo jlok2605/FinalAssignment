@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_05_075130) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_07_121208) do
   create_table "authors", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -20,11 +20,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_05_075130) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "genre"
-    t.string "author"
     t.integer "yearpublished"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity"
+    t.integer "author_id"
   end
 
   create_table "borrowed_books", force: :cascade do |t|
@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_05_075130) do
     t.datetime "updated_at", null: false
     t.string "admin_code"
     t.string "password_digest"
+    t.boolean "is_admin"
   end
 
 end
