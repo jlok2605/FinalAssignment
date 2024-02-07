@@ -1,6 +1,6 @@
 import React, {useState} from react 
 
-function Login(onLogin){
+function Signup(onSignup){
     const [usernameInput, setUsernameInput] = useState ("");
     const [passwordInput, setPasswordInput] = useState ("");
     const [confirmationPasswordInput, setConfirmationPasswordInput] = useState ("");
@@ -11,7 +11,7 @@ function Login(onLogin){
             alert("Passwords do not match");
             return;
         }
-    fetch('/login', {
+    fetch('/signup', {
         method:"POST",
         headers: {
             "Accept" : "application/json",
@@ -59,4 +59,4 @@ function Login(onLogin){
 }
 
 
-export default Login
+export default Signup;

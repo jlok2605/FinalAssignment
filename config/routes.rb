@@ -1,11 +1,12 @@
 
 Rails.application.routes.draw do
-  resources :books, only: [:index, :show, :create, :destroy, :new]
+  resources :books, only: [:index, :show, :create, :destroy]
   resources :users, only: [:new, :create, :index, :show]
   resources :borrowed_books, only: [:create, :destroy]
   resources :users do
     resources :borrowed_books, only: [:index]
   end
+  resources :authors, only: [:index, :show, :create]
   root "books#index"
   post '/login', to: "users#create"
   post '/signup', to: 'users#create'
