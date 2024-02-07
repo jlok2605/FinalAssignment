@@ -6,7 +6,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
     
       if @user.save
-        if @user.admin? && @user.authenticate(params[:user][:admin_code])
+        if @user.authenticate(params[:user][:admin_code])
           # Admin-specific logic
           session[:admin_user_id] = @user.id
           redirect_to root_path, notice: "Admin signup successful"
