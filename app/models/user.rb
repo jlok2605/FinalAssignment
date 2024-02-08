@@ -5,9 +5,13 @@ class User < ApplicationRecord
     validates :password_confirmation, presence: true
     validates :username, presence: true, uniqueness: true
     has_many :borrowed_books
+    before_validation :check_admin_code_and_set_admin_flag, on: :create
 
+    def check_admin_code_and_set_admin_flag
+        self.is_admin = admin_code == '8582'
+    end
     def admin?
-        admin_number.present?
+        is_admin
     end
 
 end

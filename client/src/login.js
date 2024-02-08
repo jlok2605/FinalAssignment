@@ -6,6 +6,10 @@ function Login(onLogin){
 
     const submitForm = e => {
         e.preventDefault();
+        const user = {
+            usernameInput,
+            passwordInput
+        }
     fetch('/login', {
         method:"POST",
         headers: {
