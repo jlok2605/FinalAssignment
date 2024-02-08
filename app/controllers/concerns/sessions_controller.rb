@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
             session [:user_id] = user.id
             session [:is_admin] = user.is_admin
-            render json: user, status: :o
+            render json: user, status: :created
     end
     
     def destroy
