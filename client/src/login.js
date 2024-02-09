@@ -12,10 +12,7 @@ function Login(onLogin){
         }
     fetch('/login', {
         method:"POST",
-        headers: {
-            "Accept" : "application/json",
-            "Content-type": "application/json"
-        },
+        headers: {"Content-type": "application/json" },
         body: JSON.stringify ({username: usernameInput})
         .then(response => response.json())
         .then(json => onLogin(json))

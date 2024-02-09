@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   def create
+    #creating a new user
     user = User.create(user_params)
       if user.save
         render json: {message: user.is_admin ? 'admin created' : 'regular user created'}, status: :created
       else
-        # Save failed
         render json: {error: 'User not created'}, status: :unprocessable_entity
       end
   end
