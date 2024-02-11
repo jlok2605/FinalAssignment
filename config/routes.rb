@@ -2,7 +2,7 @@
 Rails.application.routes.draw do
   resources :books, only: [:index, :show, :create, :destroy]
   resources :users, only: [:new, :create, :index, :show]
-  resources :borrowed_books, only: [:create, :destroy]
+  resources :borrowed_books, only: [:create, :destroy, :borrow_book]
   resources :users do
     resources :borrowed_books, only: [:index]
   end
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   delete '/logout', to: 'sessions#destroy'
   get '/me', to: "users#show" 
+  post '/borrowed_books', to: 'create#borrow_book'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -22,13 +23,6 @@ Rails.application.routes.draw do
 
 end
 
-# Rails.application.routes.draw do
-#   resources :books, only: [:index, :show, :create, :destroy, :new]
-#   resources :users, only: [:new, :create, :index, :show] do 
-#     resources :borrowed_books, only: [ ] do
-#       post 'borrow_book', on: :member
-#     end
-#   end
 
 
 #   root "books#index"

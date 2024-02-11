@@ -1,27 +1,20 @@
 class BorrowedBooksController < ApplicationController
-    # before_action :authenticate_user!, only: [:borrow_book, :return]
+    before_action :authenticate_user!, only: [:create, :return]
+    before_action 
 
     def index
         @user = User.find(params[:user_id])
         @borrowed_book = @user.borrowed_books.includes(:book)
     end
-    def borrow_book
+    def create
         @user = User.find(params[:user_id])
         @book = Book.find(params[:book_id])
-        puts "TEST 1"
-
-        if @user && @book
-            begin
-                @book.borrow!
-                @borrowed_book = BorrowedBook.create(user: @user, book: @book, checked_out_at: Time.now)
-                puts "WORKING!@!!!!"
+        @book.borrow!
+        @borrowed_book = BorrowedBook.create(user: @user, book: @book, checked_out_at: Time.now)
+        rescue ActiveRecord::RecordNotFound => e
                 redirect_to user_path(@user), alert: 'Book checked out!'
-            rescue StandardError => e
-                redirect_to user_path(@user), alert: e.message
-            end
-        else
-            redirect_to root_path, alert: 'User or book not found'
-            puts "Not working"
+        rescue StandardError => e
+            redirect_to user_path(@user), alert: 'User or book not found'
         end
     end
 
@@ -35,17 +28,4 @@ class BorrowedBooksController < ApplicationController
             raise 'No available copies of this book'
         end
     end
-#     def return
-#         @borrowed_book = BorrowedBook.find(params[:id])
-#         @user = @borrowed_book.user
-#         @book = @borrowed_book.book
-
-#         if @borrowed_book.returned_at.nil?
-#             @borrowed_book.update(returned_at: Time.now)
-#             redirect_to user_path(@user), notice: 'Book returned successfully'
-#         else
-#             redirect_to user_path(@user), alert: 'Book has already been returned'
-#         end
-#     end
-# end
 end

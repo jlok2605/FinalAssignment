@@ -13,6 +13,9 @@ function NavBar () {
                     <li>
                         <a href = '/logout' className="tags" id = 'logout'>Log Out</a>
                     </li>
+                    <li>
+                        <a href = '/books' className = "tags" id = 'books'>All books</a>
+                    </li>
                 </ul>
             </nav>
         </div>
