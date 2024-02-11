@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from "react";
+import Bookinfo from './bookinfo'
 
 function Books (){
     const [books, setBooks] = useState ([]);
-  useEffect (()=> {
+
+    useEffect (()=> {
       fetch ('/books')
       .then (response => response.json())
       .then ((response) => setBooks(response))
-    },[])}
+    },[])
 
     return(
         <div>
@@ -15,7 +17,7 @@ function Books (){
                 {books.map((book,index) =><Bookinfo book = {book} key = {index}/>)}
             </div>
         </div>
-
     )
+}
 
     export default Books;

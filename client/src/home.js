@@ -1,4 +1,5 @@
 
+import React from "react"
 function Home(){
     return (
         <div className = "intro">
@@ -12,7 +13,7 @@ function Home(){
             Our cozy reading corners invite readers to lose themselves in the pages of a novel or embark on an academic journey through scholarly tomes.</p>
             <p>Knowledge seekers of all ages will find solace in our carefully curated sections, 
             each designed to inspire and inform.</p>
-            <h2> OUR NEWEST BOOKS 2</h2>
+            <h2> OUR NEWEST BOOKS </h2>
              {/*Displays 1 random  book  with description {newbook.js component} */}
             <h2> Featured books</h2>
             {/*Displaying a line of 5 random books */}

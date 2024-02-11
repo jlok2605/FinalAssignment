@@ -1,23 +1,23 @@
-
-import {useEffect, useState} from 'react';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import React from "react";
 import NavBar from "./navbar";
-import allbooks from "./allbooks";
 import Home from "./home";
-import navbar from "./navbar";
-import navbar from "./navbar";
+import Book from "./allbooks"
 
-function App (){
-<div>
-    <NavBar/>
+function App() {
+  return (
     <div>
+      <NavBar />
+      <div>
         <BrowserRouter>
-            <Routes>
-                <Route exact path="/" element={<Home/>}/>
-            </Routes>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path = "/books" element = {<Book/>}/>
+          </Routes>
         </BrowserRouter>
+      </div>
     </div>
-</div>
-
+  );
 }
 
 export default App;

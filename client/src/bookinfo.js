@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 function BookInfo(props){
     const book = props.book
 

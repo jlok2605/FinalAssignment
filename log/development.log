@@ -38121,3 +38121,52 @@ puma (6.4.1) lib/puma/request.rb:99:in `handle_request'
 puma (6.4.1) lib/puma/server.rb:464:in `process_client'
 puma (6.4.1) lib/puma/server.rb:245:in `block in run'
 puma (6.4.1) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/books" for 127.0.0.1 at 2024-02-11 23:55:44 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('
+...action :authorize_admin, only [:index, :show]
+...                              ^
+):
+  
+app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('
+Started GET "/books" for 127.0.0.1 at 2024-02-11 23:55:44 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('
+...action :authorize_admin, only [:index, :show]
+...                              ^
+):
+  
+app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('
+Started GET "/books" for 127.0.0.1 at 2024-02-12 00:26:58 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('
+...action :authorize_admin, only [:index, :show]
+...                              ^
+):
+  
+app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('
+Started GET "/books" for 127.0.0.1 at 2024-02-12 00:26:58 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('
+...action :authorize_admin, only [:index, :show]
+...                              ^
+):
+  
+app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('
+Started GET "/books" for 127.0.0.1 at 2024-02-12 00:27:40 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('
+...action :authorize_admin, only [:index, :show]
+...                              ^
+):
+  
+app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('
+Started GET "/books" for 127.0.0.1 at 2024-02-12 00:27:40 +1000
+  
+SyntaxError (/home/jeremy/Assignment/app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('
+...action :authorize_admin, only [:index, :show]
+...                              ^
+):
+  
+app/controllers/books_controller.rb:4: syntax error, unexpected [, expecting `do' or '{' or '('

@@ -1,3 +1,4 @@
+import React from "react"
 function NavBar () {
     return (
         <div>
@@ -21,3 +22,5 @@ function NavBar () {
         </div>
     )
 } 
+
+export default NavBar;
