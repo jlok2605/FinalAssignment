@@ -19,7 +19,6 @@ class BorrowedBooksController < ApplicationController
     end
 
 
-
     def borrow! 
         #Changes the quantities of books
         if available_quantities.positive?

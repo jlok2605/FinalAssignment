@@ -1,4 +1,21 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
+function NewBookForm(props){
+  const initialBook = {
+    title: "",
+    genre: "",
+    yearpublished: "",
+    quantity: "",
+    author:""
+  }
+}
+const [inputValue, setInputValue] = useState(initialBook)
+
+const onValueChange = e => {
+  setInputValue({
+    ...inputValue,[e.target.name]: e.target.value
+  })
+}
+
 function Books (){
   const [books, setBooks] = useState ([]);
 useEffect (()=> {
@@ -47,12 +64,8 @@ const addBook = (book) => {
         placeholder="Quantity"
         value={inputValue.quantity}
         onChange={onValueChange} />
-    <br/>    
-    
-    
-    
-
-      </form>
+    <br/>  
+  </form>
 
     </div>
   )
