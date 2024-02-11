@@ -1,14 +1,34 @@
 import React, {useState} from "react";
-function NewBookForm(props){
-  const initialBook = {
-    title: "",
-    genre: "",
-    yearpublished: "",
-    quantity: "",
-    author:""
-  }
-}
-const [inputValue, setInputValue] = useState(initialBook)
+
+const submitForm = e => {
+  e.preventDefault();
+
+  fetch('/books', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(inputValue)
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log('Book added successfully');
+      setInputValue({
+        title: "",
+        genre: "",
+        yearpublished: "",
+        quantity: "",
+        author: ""
+      });
+    } else {
+      console.error('Failed to add book');
+      
+    }
+  })
+  .catch(error => {
+    console.error('Error adding book:', error);
+  });
+  };
 
 const onValueChange = e => {
   setInputValue({
@@ -23,44 +43,41 @@ useEffect (()=> {
     .then (response => response.json())
     .then ((response) => setBooks(response))
   },[])
-const addBook = (book) => {
-  setBooks((currentState) => {
-    return [...currentState,book]})
 
   return (
     <div className='New Book Form'>
       <form onSubmit = {submitForm}>
       <input 
         type ="text" 
-        name="Title" 
+        name="title" 
         placeholder="Title"
         value={inputValue.title}
         onChange={onValueChange} />
     <br/>    
       <input 
         type ="text" 
-        name="Author" 
+        name="author" 
         placeholder="Author"
         value={inputValue.author}
         onChange={onValueChange} />
     <br/>
     <input 
         type ="text" 
-        name="Author" 
-        placeholder="Author"
-        value={inputValue.author}
+        name="genre" 
+        placeholder="Genre"
+        value={inputValue.genre}
         onChange={onValueChange} />
     <br/>
     <input 
         type ="text" 
-        name="Author" 
+        name="yearpublished" 
         placeholder="Year Published"
         value={inputValue.yearpublished}
         onChange={onValueChange} />
     <br/>
     <input 
         type ="number" 
-        name="Quantity" 
+        name="quantity" 
         placeholder="Quantity"
         value={inputValue.quantity}
         onChange={onValueChange} />
@@ -69,6 +86,6 @@ const addBook = (book) => {
 
     </div>
   )
-}}
+}
 
 export default Books;
