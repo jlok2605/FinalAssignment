@@ -7,6 +7,7 @@ function BookInfo(props){
 
     return (
         <div className="container">
+            <img src = "../bookcover.jpg" alt = "book"></img>
             <div className="information">
                 <h3 key = "title">Title: {book.title}</h3>
                 <h3 key = "author">Author: {book.author}</h3>

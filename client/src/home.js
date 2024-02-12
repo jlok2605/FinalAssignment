@@ -11,7 +11,7 @@ function Home(){
             the pursuit of knowledge knows no bounds. Step into a world where the aroma of well-loved books mingles with the hum of intellectual discourse.
             Our cozy reading corners invite readers to lose themselves in the pages of a novel or embark on an academic journey through scholarly tomes. Knowledge seekers of all ages will find solace in our carefully curated sections, 
             each designed to inspire and inform.</p>
-            <img className="library" src = "../../Photos/BooksOfLibrary.jpg" alt = "library"></img>
+            <img className="library" src = "../BooksOfLibrary.jpg" alt = "library"></img>
             <h2> OUR NEWEST BOOKS </h2>
              {/*Displays 1 random  book  with description {newbook.js component} */}
             <h2> Featured books</h2>
