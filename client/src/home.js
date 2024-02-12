@@ -13,8 +13,6 @@ function Home(){
             <img className="library" src = "../BooksOfLibrary.jpg" alt = "library"></img>
             <h2> OUR NEWEST BOOKS </h2>
              <NewBook/>
-            <h2> Featured books</h2>
-            {/*Displaying a line of 5 random books */}
             {/* FOOTER 
             Contact us details: email, phone number,
             Library hours,
