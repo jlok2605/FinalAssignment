@@ -3,6 +3,7 @@ import React from "react";
 import NavBar from "./navbar";
 import Home from "./home";
 import Book from "./allbooks"
+import SearchBar from './searchbar'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path = "/books" element = {<Book/>}/>
+            <Route path = "search" element = {<SearchBar/>}/>
           </Routes>
         </BrowserRouter>
       </div>
