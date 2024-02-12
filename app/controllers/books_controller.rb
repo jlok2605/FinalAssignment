@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
-    before_action :authorize_admin, only: [:create, :destroy]
-    before_action :authorize
-    skip_before_action :authorize_admin, only [:index, :show]
+    # before_action :authorize_admin, only: [:create, :destroy]
+    # before_action :authorize
+    # skip_before_action :authorize_admin, only [:index, :show]
 
     rescue_from ActiveRecord::RecordNotFound, with: :render_book_not_found
 
