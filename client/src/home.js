@@ -1,5 +1,6 @@
 
 import React from "react"
+import NewBook from "./newbook"
 function Home(){
     return (
         <div className = "intro">
@@ -13,7 +14,7 @@ function Home(){
             each designed to inspire and inform.</p>
             <img className="library" src = "../BooksOfLibrary.jpg" alt = "library"></img>
             <h2> OUR NEWEST BOOKS </h2>
-             {/*Displays 1 random  book  with description {newbook.js component} */}
+             <NewBook/>
             <h2> Featured books</h2>
             {/*Displaying a line of 5 random books */}
             {/* FOOTER 
