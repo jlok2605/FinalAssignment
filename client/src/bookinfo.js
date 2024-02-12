@@ -13,6 +13,7 @@ function BookInfo(props){
                 <h3 key = "author">Author: {book.author}</h3>
                 <h3 key = "genre">Genre: {book.genre}</h3>
                 <h3 key = "yearpublished">Year Published: {book.yearpublished}</h3>
+                <button>Borrow</button>
             </div>
         </div>
     )

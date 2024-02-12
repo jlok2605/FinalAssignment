@@ -15,6 +15,7 @@ function Books (){
             <h1>Books</h1>
             <div id = "Books">
                 {books.map((book,index) =><Bookinfo book = {book} key = {index}/>)}
+                <button>Check out book</button>
             </div>
         </div>
     )

@@ -4,8 +4,6 @@ import NewBook from "./newbook"
 function Home(){
     return (
         <div className = "intro">
-            {/*NavBar containing Home route, My Books (button), Search (button) */}
-
             <h1> Welcome to Evergreen Knowledge Hub</h1>
             <p>Evergreen Knowledge Hub, a sanctuary for intellect and exploration!
             Nestled in the heart of the community, our library stands as a timeless beacon of wisdom, fostering a vibrant atmosphere where 
