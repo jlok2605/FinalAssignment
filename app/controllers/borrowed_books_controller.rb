@@ -1,7 +1,7 @@
 
 class BorrowedBooksController < ApplicationController
-    before_action :authenticate_user!, only: [:create, :destroy]
-    before_action :authorize_admin, only: [:index]
+    # before_action :authenticate_user!, only: [:create, :destroy]
+    # before_action :authorize_admin, only: [:index]
 
 
     #To borrow a book
@@ -9,6 +9,7 @@ class BorrowedBooksController < ApplicationController
       borrowed_book = BorrowedBook.create(borrowed_book_params)
       book = Book.find(borrowed_book.book_id)
       if book.quantity == 0
+        puts "no more books remaining"
         render json: {error: "No copies of this book are available"}, status: :unprocessable_entity
       return
       end
