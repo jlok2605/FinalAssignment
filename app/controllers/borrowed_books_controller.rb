@@ -1,6 +1,9 @@
 
-    # before_action :authenticate_user!, only: [:create, :return]
 class BorrowedBooksController < ApplicationController
+    before_action :authenticate_user!, only: [:create, :destroy]
+    before_action :authorize_admin, only: [:index]
+
+
     #To borrow a book
     def create
       borrowed_book = BorrowedBook.create(borrowed_book_params)
