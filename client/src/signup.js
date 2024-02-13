@@ -1,9 +1,10 @@
-import React, {useState} from react 
+import React, {useState} from 'react' 
 
 function Signup(onSignup){
     const [usernameInput, setUsernameInput] = useState ("");
     const [passwordInput, setPasswordInput] = useState ("");
     const [confirmationPasswordInput, setConfirmationPasswordInput] = useState ("");
+    const [adminCode, setAdminCode] = useState("")
 
     const submitForm = e => {
         e.preventDefault();
@@ -50,6 +51,13 @@ function Signup(onSignup){
                 name = 'password confirmation' 
                 value = {confirmationPasswordInput} onChange = {(e) =>
                 {setConfirmationPasswordInput (e.target.value)}}/>
+            <br/>
+            <input 
+                type = "text" 
+                id = 'admin code' 
+                name = 'admin code' 
+                value = {adminCode} onChange = {(e) =>
+                {setAdminCode (e.target.value)}}/>
             <br/>
 
             <button type = "submit">Login</button>

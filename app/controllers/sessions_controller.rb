@@ -14,6 +14,8 @@ class SessionsController < ApplicationController
         session.delete :user_id
         session.delete :is_admin
         head :no_content
+        redirect_to root_path, notice: "Logged out successfully"
+        puts "logged out"
     end
 
     

@@ -8,6 +8,7 @@ class BorrowedBooksController < ApplicationController
     def create
       borrowed_book = BorrowedBook.create(borrowed_book_params)
       book = Book.find(borrowed_book.book_id)
+      borrowed_book.checked_out_at = Time.zone.now #To set checkout date to when button is clicked
       if book.quantity == 0
         puts "no more books remaining"
         render json: {error: "No copies of this book are available"}, status: :unprocessable_entity

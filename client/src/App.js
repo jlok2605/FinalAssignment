@@ -4,6 +4,7 @@ import NavBar from "./navbar";
 import Home from "./home";
 import Book from "./allbooks"
 import SearchBar from './searchbar'
+import Signup  from "./signup";
 
 function App() {
   return (
