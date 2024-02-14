@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-    before_action :authorize_admin, only: [:create, :destroy]
-    skip_before_action :authorize_admin, only: [:index, :show]
+    # before_action :authorize_admin, only: [:create, :destroy, :update]
+    # skip_before_action :authorize_admin, only: [:index, :show]
 
     rescue_from ActiveRecord::RecordNotFound, with: :render_book_not_found
 
@@ -24,6 +24,15 @@ class BooksController < ApplicationController
         book = Book.find(params[:id])
         book.destroy
         head :no_content, notice: 'Book destroyed successfully'
+    end
+
+    def update
+        book = Book.find(params[:id])
+        if book.update(book_params)
+            render json: {message: "Book updated"}, status: :ok
+        else
+            render json:{error: "Failed to update book"}, status: :unprocessable_entity
+        end
     end
     
     private 

@@ -1,6 +1,7 @@
-import React, {useState} from 'react' 
+import React, {useState} from 'react';
 
-function Signup(onSignup){
+
+function Signup(props){
     const [usernameInput, setUsernameInput] = useState ("");
     const [passwordInput, setPasswordInput] = useState ("");
     const [confirmationPasswordInput, setConfirmationPasswordInput] = useState ("");
@@ -19,9 +20,10 @@ function Signup(onSignup){
             "Content-type": "application/json"
         },
         body: JSON.stringify ({username: usernameInput})
-        .then(response => response.json())
-        .then(json => onLogin(json))
     })
+        .then(response => response.json())
+        .then(json => {console.log(json)})
+    
 }
     return (
         <form onSubmit = {submitForm}>
@@ -52,6 +54,7 @@ function Signup(onSignup){
                 value = {confirmationPasswordInput} onChange = {(e) =>
                 {setConfirmationPasswordInput (e.target.value)}}/>
             <br/>
+            <label for = 'admin code'>Admin code:</label>
             <input 
                 type = "text" 
                 id = 'admin code' 

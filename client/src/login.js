@@ -1,4 +1,4 @@
-import React, {useState} from react 
+import React, {useState} from 'react' 
 
 function Login(onLogin){
     const [usernameInput, setUsernameInput] = useState ("");
@@ -6,17 +6,15 @@ function Login(onLogin){
 
     const submitForm = e => {
         e.preventDefault();
-        const user = {
-            usernameInput,
-            passwordInput
-        }
+    
     fetch('/login', {
         method:"POST",
         headers: {"Content-type": "application/json" },
         body: JSON.stringify ({username: usernameInput})
+    })
         .then(response => response.json())
         .then(json => onLogin(json))
-    })
+    
 }
     return (
         <form onSubmit = {submitForm}>
@@ -31,7 +29,7 @@ function Login(onLogin){
 
             <br/>
 
-            <label for = 'password'>Password:</label>
+            <label HTMLfor = 'password'>Password:</label>
             <input 
                 type = "password" 
                 id = 'password' 

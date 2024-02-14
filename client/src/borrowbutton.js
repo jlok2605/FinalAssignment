@@ -10,7 +10,7 @@ function BorrowButton({ bookId }) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ book_id: bookId }),
+                body: JSON.stringify({ book_id: bookId , user_id: 3}),
             });
 
             if (!response.ok) {
