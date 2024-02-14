@@ -1,0 +1,40 @@
+.newbookcontainer
+{
+    background-color: rgba(180, 180, 180, 0.815);
+}
+
+
+h2{
+    margin-left: 300px;
+}
+.newbook {
+    display: flex;
+    align-items: center; 
+}
+
+.newbook .content {
+    display: flex;
+    align-items: flex-start; 
+}
+
+.newbook img {
+    margin:-30px 10px 0px 300px; 
+    transform: scale(0.75)
+
+
+}
+
+.newbook .reviews {
+    display: flex;
+    flex-direction: column; /* Arrange reviews vertically */
+    margin:50px 0px 0px 300px;
+}
+
+.newbook .review {
+    margin-bottom: 10px; /* Add spacing between reviews */
+}
+
+h2 {
+    padding: 50px 0px 0px 100px;
+
+}

@@ -53,3 +53,5 @@ function UpdateBookForm(props) {
         </form>
     );
 }
+
+export default UpdateBookForm;
