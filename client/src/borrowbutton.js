@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-function BorrowButton({ bookId }) {
+function BorrowButton({ bookId, userId }) {
     const [isBorrowed, setIsBorrowed] = useState (false)
     const handleBorrowBook = async () => {
         try {
@@ -10,7 +10,7 @@ function BorrowButton({ bookId }) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ book_id: bookId , user_id: 3}),
+                body: JSON.stringify({ book_id: bookId , user_id : userId}),
             });
 
             if (!response.ok) {

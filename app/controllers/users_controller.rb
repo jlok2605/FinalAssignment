@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     user = User.create(user_params)
       if user.save
         render json: {message: user.is_admin ? 'admin created' : 'regular user created'}, status: :created
-        session[:user_id] = @user.id
+        session[:user_id] = user.id
       else
         render json: {error: 'User not created'}, status: :unprocessable_entity
       end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
 
     def user_params
-      params.permit(:username, :password,  :password_confirmation, :admin_code)
+      params.permit(:username, :password, :password_confirmation, :admin_code)
     end
 
 end

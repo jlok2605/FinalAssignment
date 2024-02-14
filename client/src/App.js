@@ -6,7 +6,6 @@ import Book from "./allbooks"
 import SearchBar from './searchbar'
 import Signup  from "./signup";
 import Login from "./login";
-
 function App() {
   return (
     <div>

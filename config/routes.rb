@@ -1,7 +1,7 @@
 
 Rails.application.routes.draw do
   resources :books, only: [:index, :show, :create, :destroy, :update]
-  resources :users, only: [:new, :create, :index, :show]
+  resources :users, only: [:create, :index, :show]
   resources :borrowed_books, only: [:create, :destroy, :index]
   resources :users do
     resources :borrowed_books, only: [:index]

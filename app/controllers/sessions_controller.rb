@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
         session.delete (:user_id)
         session.delete (:is_admin)
         head :no_content
-
     end
 
     
