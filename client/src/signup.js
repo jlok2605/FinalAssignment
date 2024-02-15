@@ -12,6 +12,13 @@ function Signup() {
             alert("Passwords do not match");
             return;
         }
+        console.log({
+            username: usernameInput,
+            password: passwordInput,
+            password_confirmation: confirmationPasswordInput,
+            admin_code: adminCode
+        });
+        
     
         fetch('/signup', {
             method: "POST",

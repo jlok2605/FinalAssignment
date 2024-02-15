@@ -1,5 +1,27 @@
 import React from "react"
 import "./navbar.css"
+function logout(event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+    // Send an AJAX request to the logout endpoint
+    fetch('/logout', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.href = '/';
+        } else {
+            console.error('Logout failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
 function NavBar () {
     return (
         <div>
@@ -13,7 +35,7 @@ function NavBar () {
                         <a href = '/search' className="tags" id = 'search'>Search</a>
                     </li>
                     <li>
-                        <a href = '/logout' className="tags" id = 'logout'>Log Out</a>
+                        <a href = '#' onClick = {logout} className="tags" id = 'logout'>Log Out</a>
                     </li>
                     <li>
                         <a href = '/books' className = "tags" id = 'books'>All books</a>
