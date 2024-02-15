@@ -6,17 +6,21 @@ class BorrowedBooksController < ApplicationController
 
     #To borrow a book
     def create
-      borrowed_book = BorrowedBook.create(borrowed_book_params)
+      borrowed_book = BorrowedBook.new(borrowed_book_params)
       book = Book.find(borrowed_book.book_id)
-      borrowed_book.checked_out_at = Time.zone.now #To set checkout date to when button is clicked
+      borrowed_book.checked_out_at = Time.zone.now # Set checkout date to when button is clicked
       if book.quantity == 0
         puts "no more books remaining"
         render json: {error: "No copies of this book are available"}, status: :unprocessable_entity
-      return
+        return
       end
-        book.update(quantity: book.quantity - 1)
-        render json: { message: 'Borrowed book' }, status: :created
+      if borrowed_book.save
+        render json: borrowed_book, status: :created
+      else
+        render json: borrowed_book.errors, status: :unprocessable_entity
+      end
     end
+    
     #TO RETURN A BOOK
     def destroy
         borrowed_book = BorrowedBook.find(params[:id])
@@ -41,6 +45,5 @@ class BorrowedBooksController < ApplicationController
       params.permit(:user_id, :book_id)
     end
 
-   
   end
   
