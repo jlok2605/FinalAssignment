@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
     attribute :quantity, :integer
     belongs_to:author
-    has_many :borrowed_books
+    has_many :borrowed_books, dependent: :destroy
 
     def available_copies
         quantity - borrowed_books.where(returned_at: nil).count
