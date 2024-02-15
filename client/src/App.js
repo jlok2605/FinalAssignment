@@ -6,9 +6,11 @@ import Book from "./allbooks"
 import SearchBar from './searchbar'
 import Signup  from "./signup";
 import Login from "./login";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
+  // set a state for the user to keep it
   return (
     <div>
       <NavBar />
