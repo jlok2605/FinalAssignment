@@ -9,10 +9,10 @@ function BookInfo(props){
 
     return (
             <div className="row">
-                <div className="col-md-4">
+                <div className="col">
                     <img src="../bookcover.jpg" alt="book" className="img-fluid" />
                 </div>
-                <div className="col-md-8">
+                <div className="col">
                     <div className="book-information">
                         <h5>Title: {book.title}</h5>
                         <h5>Author: {book.author}</h5>

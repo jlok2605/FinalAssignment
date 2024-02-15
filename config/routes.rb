@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post '/login' , to: "sessions#create"
   post '/signup', to: 'users#create'
   delete '/logout', to: 'sessions#destroy'
-  get '/me', to: "users#show" 
+  get '/me', to: "users#show"
   post '/borrowed_books', to: 'borrowed_books#create'
   delete '/borrowed_books', to: 'borrowed_books#destroy'
   get '/borrowed_books/:user_id', to: 'borrowed_books#user_borrowed_books'

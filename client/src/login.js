@@ -18,18 +18,11 @@ function Login({ onLogin }) {
         })
         .then(response => {
             if (response.ok) {
-                // Login successful, redirect to home page
-                navigate('/');
-                onLogin(); // Call onLogin function if needed
-            } else {
-                // Login failed, handle error
-                console.error('Login failed');
-            }
+                response.json().then(user => onLogin(user))
+                navigate('/')            
+            } 
         })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    };
+    }
 
     return (
         <form onSubmit={handleSubmit}>
