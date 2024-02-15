@@ -29,6 +29,13 @@ class BorrowedBooksController < ApplicationController
         borrowed_books = BorrowedBook.all
         render json: borrowed_books, status: :ok
     end
+    def user_borrowed_books
+      user = User.find(params[:user_id])
+      borrowed_books = user.borrowed_books
+      render json: borrowed_books, status: :ok
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'User not found' }, status: :not_found
+    end
     private  
     def borrowed_book_params
       params.permit(:user_id, :book_id)
