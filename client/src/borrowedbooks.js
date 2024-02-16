@@ -1,24 +1,37 @@
 import React, { useState, useEffect } from 'react';
+import "./borrowedbooks.css"
 
-function BorrowedBooksList({ user_id }) {
+function BorrowedBooksList({ userId }) {
   const [borrowedBooks, setBorrowedBooks] = useState([]);
+
   useEffect(() => {
-    fetch(`/borrowed_books/${user_id}`)
-        
+    if(!!userId){
+      fetch(`/borrowed_books/${userId.user_id}`)
         .then(response => response.json())
-        .then(data => {
-            setBorrowedBooks(data);
-            console.log(borrowedBooks);
-        });
-}, [user_id]);
+        .then(json => {
+            setBorrowedBooks(json); 
+            console.log(json); 
+        })
+      }}, [userId]);
+
+
   return (
     <div>
-      <h2>Your books</h2>
-      <ul>
-      {/* {borrowedBooks.map(book => (
-                    <li key={book.id}>{book.title} by {book.author}</li>
-        ))} */}
-      </ul>
+      <h2>User's Borrowed Books</h2>
+      <table>
+        <tr>
+          <th>Book Title</th>
+          <th>Author</th>
+          <th>Actions</th>
+        </tr>
+        {borrowedBooks?.map(book => (
+          <tr>
+            <td>{book.title}</td>
+            <td>{book.author}</td>
+            <td><button>Return</button></td>
+          </tr>
+        ))}
+      </table>
     </div>
   );
 }

@@ -8,7 +8,6 @@ function Books (props){
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect (()=> {
-        console.log(props.user)
         fetch ('/books',{
             method: "GET",
             "Content-Type": "application/json"

@@ -10,7 +10,7 @@ function UpdateBookForm(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         fetch(`/books/${bookId}`, {
-            method: 'PATCH', // or 'PUT'
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -25,7 +25,6 @@ function UpdateBookForm(props) {
         .then(response => {
             if (response.ok) {
                 console.log('Book updated successfully');
-                // Optionally, you can update the state or do something else
             } else {
                 console.error('Failed to update book');
             }

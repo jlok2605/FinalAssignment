@@ -21,7 +21,7 @@ function App() {
       }})
     .then((response) => {
       if (response.ok) {
-        response.json().then((user) => {console.log(user)
+        response.json().then((user) =>{
           setUser(user)});
       }
     });
@@ -46,7 +46,7 @@ function App() {
             <Route path = "/login" element = {<Login onLogin={handleLogin}/>} />
             <Route path = "/signup" element = {<Signup/>}/>
             <Route path = "/me"/>
-            <Route path = "/mybooks" element = {<BorrowedBooksList user={user}/>}/>
+            <Route path = "/mybooks" element = {<BorrowedBooksList userId={user}/>}/>
           </Routes>
         </BrowserRouter>
       </div>
