@@ -1,19 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import "./borrowedbooks.css"
 
-function BorrowedBooksList({ userId }) {
+function BorrowedBooksList({ user }) {
   const [borrowedBooks, setBorrowedBooks] = useState([]);
 
-  useEffect(() => {
-    if(!!userId){
-      fetch(`/borrowed_books/${userId.user_id}`)
-        .then(response => response.json())
-        .then(json => {
-            setBorrowedBooks(json); 
-            console.log(json); 
-        })
-      }}, [userId]);
+  function fetchBorrowedBooks(userId) {
+    fetch(`/borrowed_books/${userId}`)
+      .then(response => response.json())
+      .then(json => {
+        setBorrowedBooks(json);
+      });
+  }
 
+  useEffect(() => {
+    if (!!user) {
+      fetchBorrowedBooks(user?.user_id);
+    }
+  }, [user]);
+
+  function handleReturn(id) {
+    fetch(`/borrowed_books/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        alert(json?.message)
+        fetchBorrowedBooks(user?.user_id)
+      })
+  }
 
   return (
     <div>
@@ -28,12 +42,11 @@ function BorrowedBooksList({ userId }) {
           <tr>
             <td>{book.title}</td>
             <td>{book.author}</td>
-            <td><button>Return</button></td>
+            <td><button value={book.id} onClick={(e) => handleReturn(e.target.value)}>Return</button></td>
           </tr>
         ))}
       </table>
     </div>
   );
 }
-
-export default BorrowedBooksList;
+export default BorrowedBooksList
