@@ -4,7 +4,6 @@ import SearchBar from "./searchbar";
 
 function Books ({ user }){
     const [books, setBooks] = useState([]);
-    const [filteredBooks, setFilteredBooks] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [borrowedBooks, setBorrowedBooks] = useState([])
 
@@ -16,14 +15,15 @@ function Books ({ user }){
         .then (response => response.json())
         .then ((response) => {
             setBooks(response);
-            setFilteredBooks(response);
         })
     },[])
 
     useEffect(() => {
-        fetch(`/borrowed_books/${user?.user_id}`)
+        if (!!user) {
+            fetch(`/borrowed_books/${user?.user_id}`)
             .then(response => response.json())
-            .then(json => setBorrowedBooks(json));
+            .then(json => {console.log(json); setBorrowedBooks(json)});
+        }
     }, [user]);
 
     const handleSearch = (term) => {
@@ -31,7 +31,6 @@ function Books ({ user }){
         const filtered = books.filter(book => 
             book.title.toLowerCase().includes(term.toLowerCase())
         );
-        setFilteredBooks(filtered);
     };
 
     return(
@@ -39,8 +38,11 @@ function Books ({ user }){
             <h1>Books</h1>
             <SearchBar onSearch={handleSearch}/>
             <div id="Books">
-                {filteredBooks.map((book, index) => {
-                    const isBorrowed = !!(borrowedBooks.find((item) => item.book_id === book.book_id));
+                {books.map((book, index) => {
+                    console.log("THIS IS THE BOOK", book)
+                    const isBorrowed = !!(borrowedBooks?.find((item) => item.book_id === book.id));
+                    console.log("CHECKING THIS BOOK HGMMMMM", book?.book_id)
+                    console.log("IS THIS BORROWED????", isBorrowed)
                     return (<Bookinfo book={book} key={index} user={user} isBorrowed={isBorrowed}/>)
                 })}
             </div>
