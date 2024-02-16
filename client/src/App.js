@@ -1,5 +1,5 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import React,{useState, useEffect} from "react";
+import React,{useState} from "react";
 import NavBar from "./navbar";
 import Home from "./home";
 import Book from "./allbooks"
@@ -9,24 +9,30 @@ import Login from "./login";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
 function App() {
-  // set a state for the user to keep it
   const [user, setUser] = useState(null);
-  useEffect(() => {
-    fetch("/me").then((response) => {
-      if (response.ok) {
-        response.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
+
+  // useEffect(() => {
+  //   fetch("/me", {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     }})
+  //   .then((response) => {
+  //     if (response.ok) {
+  //       response.json().then((user) => {console.log(user)
+  //         setUser(user)});
+  //     }
+  //   });
+  // }, []);
+  
   function handleLogin(user) {
+    console.log("Inside login", user)
     setUser(user);
   }
 
   function handleLogout() {
-    setUser(null);
-  }
+    setUser(null);} 
   return (
     <div>
       <NavBar onLogout={handleLogout}/>
@@ -34,10 +40,11 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path = "/books" element = {<Book/>}/>
+            <Route path = "/books" element = {<Book user = {user}/>}/>
             <Route path = "/search" element = {<SearchBar/>}/>
-            <Route path = "/login" element = {<Login/>} onLogin={handleLogin} />
+            <Route path = "/login" element = {<Login onLogin={handleLogin}/>} />
             <Route path = "/signup" element = {<Signup/>}/>
+            <Route path = "/me"/>
           </Routes>
         </BrowserRouter>
       </div>

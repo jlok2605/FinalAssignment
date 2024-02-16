@@ -15,6 +15,9 @@ class SessionsController < ApplicationController
         session.delete (:is_admin)
         head :no_content
     end
-
+    
+    def user_params
+        params.permit(:username, :password)
+    end
     
 end
