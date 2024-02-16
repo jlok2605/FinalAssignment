@@ -33,17 +33,50 @@ function Books ({ user }){
         );
     };
 
+    const handleBorrowBook = async (bookId) => {
+        fetch('/borrowed_books', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accepts': 'application/json'
+            },
+            body: JSON.stringify({
+                book_id: bookId, 
+                user_id: user?.user_id
+            })
+        })
+        .then(response => response.json())
+        alert('Book borrowed successfully');
+    };
+
+    const handleReturnBook = async (bookId) => {
+        fetch(`borrowed_books/${bookId}`, {
+            method: 'DELETE',
+        })
+        .then((response) => response.json())
+        .then((json) => {
+            alert(json?.message)
+        })
+    };
+
     return(
         <div>
             <h1>Books</h1>
             <SearchBar onSearch={handleSearch}/>
             <div id="Books">
                 {books.map((book, index) => {
-                    console.log("THIS IS THE BOOK", book)
-                    const isBorrowed = !!(borrowedBooks?.find((item) => item.book_id === book.id));
-                    console.log("CHECKING THIS BOOK HGMMMMM", book?.book_id)
-                    console.log("IS THIS BORROWED????", isBorrowed)
-                    return (<Bookinfo book={book} key={index} user={user} isBorrowed={isBorrowed}/>)
+                    const borrowedBook = borrowedBooks?.find((item) => item.book_id === book.id);
+                    const isBorrowed = !!borrowedBook
+                    return (
+                        <Bookinfo 
+                            book={book} 
+                            user={user} 
+                            isBorrowed={isBorrowed} 
+                            borrowedBook={borrowedBook}
+                            handleBorrowBook={handleBorrowBook}
+                            handleReturnBook={handleReturnBook}
+                        />
+                    )
                 })}
             </div>
         </div>

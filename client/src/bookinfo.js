@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import "./bookcontainer.css"
 
-function BookInfo({ book, key, user, isBorrowed }){
+function BookInfo({ book, user, isBorrowed, borrowedBook, handleBorrowBook, handleReturnBook }){
     return (
         <div className="row">
             <div className="col">
@@ -14,8 +14,8 @@ function BookInfo({ book, key, user, isBorrowed }){
                     <h5>Genre: {book.genre}</h5>
                     <h5>Year Published: {book.yearpublished}</h5>
                     { isBorrowed ? 
-                        <button>Return book</button>
-                        : <button>Borrow book</button>
+                        <button onClick={() => handleReturnBook(borrowedBook.id)}>Return book</button> 
+                        : <button onClick={() => handleBorrowBook(book.id)}>Borrow book</button>
                     }
                 </div>
             </div>
