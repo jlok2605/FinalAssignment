@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 
-function SearchBar({ data, setData, books }) {
-  const [searchTerm, setSearchTerm] = useState('');
+function SearchBar({ setSearchTerm }) {
+  const [searchInput, setSearchInput] = useState('');
 
   const handleChange = event => {
-    setSearchTerm(event.target.value);
+    setSearchInput(event.target.value);
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const filteredData = data.filter(item => item.includes(searchTerm));
-    setData(filteredData);
-  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSearchTerm(searchInput);
+  }
 
   return (
     <div>
@@ -19,31 +18,13 @@ function SearchBar({ data, setData, books }) {
         <input
           type='text'
           placeholder='Search...'
-          value={searchTerm}
+          value={searchInput}
           onChange={handleChange}
         />
         <button type='submit'>Search</button>
       </form>
-      <BooksList books={books} />
     </div>
   );
 }
-
-function BooksList({ books }) {
-    if (books === undefined || books === null) {
-        return <div>Loading...</div>;
-      }
-  
-    return (
-      <div>
-        {books.map(book => (
-          <div key={book.id}>
-            <h3>{book.title}</h3>
-            <p>{book.author}</p>
-          </div>
-        ))}
-      </div>
-    );
-  }
   
 export default SearchBar;

@@ -4,8 +4,8 @@ import SearchBar from "./searchbar";
 
 function Books ({ user }){
     const [books, setBooks] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
     const [borrowedBooks, setBorrowedBooks] = useState([])
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect (()=> {
         fetch ('/books',{
@@ -19,19 +19,8 @@ function Books ({ user }){
     },[])
 
     useEffect(() => {
-        if (!!user) {
-            fetch(`/borrowed_books/${user?.user_id}`)
-            .then(response => response.json())
-            .then(json => {console.log(json); setBorrowedBooks(json)});
-        }
+        fetchBorrowedBooks();
     }, [user]);
-
-    const handleSearch = (term) => {
-        setSearchTerm(term);
-        const filtered = books.filter(book => 
-            book.title.toLowerCase().includes(term.toLowerCase())
-        );
-    };
 
     const handleBorrowBook = async (bookId) => {
         fetch('/borrowed_books', {
@@ -46,7 +35,10 @@ function Books ({ user }){
             })
         })
         .then(response => response.json())
-        alert('Book borrowed successfully');
+        .then(() => {
+            alert('Book borrowed successfully');
+            fetchBorrowedBooks();
+        })
     };
 
     const handleReturnBook = async (bookId) => {
@@ -55,16 +47,22 @@ function Books ({ user }){
         })
         .then((response) => response.json())
         .then((json) => {
-            alert(json?.message)
+            alert(json?.message);
+            fetchBorrowedBooks();
         })
     };
 
     return(
         <div>
             <h1>Books</h1>
-            <SearchBar onSearch={handleSearch}/>
+            <SearchBar setSearchTerm={setSearchTerm}/>
             <div id="Books">
-                {books.map((book, index) => {
+                {books.filter(book => {
+                    return Object.values(book).some(value => {
+                        return typeof value === "string" && value.toLowerCase().includes(searchTerm.toLowerCase());
+                    })
+                })
+                .map((book, index) => {
                     const borrowedBook = borrowedBooks?.find((item) => item.book_id === book.id);
                     const isBorrowed = !!borrowedBook
                     return (
@@ -81,6 +79,14 @@ function Books ({ user }){
             </div>
         </div>
     )
+
+    function fetchBorrowedBooks() {
+        if (!!user) {
+            fetch(`/borrowed_books/${user?.user_id}`)
+                .then(response => response.json())
+                .then(json => { setBorrowedBooks(json); });
+        }
+    }
 }
 
 export default Books;
