@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import Bookinfo from './bookinfo'
 import SearchBar from "./searchbar";
 
-function Books (props){
+function Books ({ user }){
     const [books, setBooks] = useState([]);
     const [filteredBooks, setFilteredBooks] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [borrowedBooks, setBorrowedBooks] = useState([])
 
     useEffect (()=> {
         fetch ('/books',{
@@ -17,7 +18,13 @@ function Books (props){
             setBooks(response);
             setFilteredBooks(response);
         })
-    },[props.user])
+    },[])
+
+    useEffect(() => {
+        fetch(`/borrowed_books/${user?.user_id}`)
+            .then(response => response.json())
+            .then(json => setBorrowedBooks(json));
+    }, [user]);
 
     const handleSearch = (term) => {
         setSearchTerm(term);
@@ -32,7 +39,10 @@ function Books (props){
             <h1>Books</h1>
             <SearchBar onSearch={handleSearch}/>
             <div id="Books">
-                {filteredBooks.map((book, index) => <Bookinfo book={book} key={index} user={props.user}/>)}
+                {filteredBooks.map((book, index) => {
+                    const isBorrowed = !!(borrowedBooks.find((item) => item.book_id === book.book_id));
+                    return (<Bookinfo book={book} key={index} user={user} isBorrowed={isBorrowed}/>)
+                })}
             </div>
         </div>
     )

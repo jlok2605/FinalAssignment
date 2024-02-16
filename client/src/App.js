@@ -2,7 +2,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import React,{useState,useEffect} from "react";
 import NavBar from "./navbar";
 import Home from "./home";
-import Book from "./allbooks"
+import Books from "./allbooks"
 import SearchBar from './searchbar'
 import Signup  from "./signup";
 import Login from "./login";
@@ -41,7 +41,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/books" element={<Book user={user} />} />
+            <Route path="/books" element={<Books user={user} />} />
             <Route path = "/search" element = {<SearchBar/>}/>
             <Route path = "/login" element = {<Login onLogin={handleLogin}/>} />
             <Route path = "/signup" element = {<Signup/>}/>
