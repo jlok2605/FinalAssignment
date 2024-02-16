@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post '/borrowed_books', to: 'borrowed_books#create'
   delete '/borrowed_books', to: 'borrowed_books#destroy'
   get '/borrowed_books/:user_id', to: 'borrowed_books#user_borrowed_books'
+  get '/test', to: 'sessions#test'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

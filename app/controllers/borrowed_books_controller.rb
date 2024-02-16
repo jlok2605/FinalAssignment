@@ -42,7 +42,7 @@ class BorrowedBooksController < ApplicationController
     end
     private  
     def borrowed_book_params
-      params.require(:borrowed_book).permit(:book_id, :user_id) # Add other permitted attributes if necessary
+      params.permit(:book_id, :user_id)
     end
     
 

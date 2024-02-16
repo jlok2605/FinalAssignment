@@ -3,23 +3,23 @@ import "./navbar.css"
 function NavBar( {onLogout}) {
 
     // Send an AJAX request to the logout endpoint
-    function handleLogout(event){
-        event.preventDefault()
+    function handleLogout(event) {
+        event.preventDefault();
         fetch('/logout', {
-            method: 'DELETE',})
-            .then(()=>onLogout())
-            
-    .then(response => {
-        if (response.ok) {
-            window.location.href = '/';
-        } else {
-            console.error('Logout failed');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
+          method: 'DELETE',
+        })
+          .then((response) => {
+            console.log(response); // Log the response to see its value
+            if (response.ok) {
+              onLogout();
+            } else {
+              throw new Error('Logout failed');
+            }
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+      }
 
     return (
         <div>

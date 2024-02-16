@@ -18,7 +18,7 @@ function BookInfo(props){
                         <h5>Author: {book.author}</h5>
                         <h5>Genre: {book.genre}</h5>
                         <h5>Year Published: {book.yearpublished}</h5>
-                        <BorrowButton bookId={book.id} userId={user.id}/>
+                        <BorrowButton bookId={book.id} userId={user}/>
                     </div>
                 </div>
             </div>

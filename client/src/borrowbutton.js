@@ -5,15 +5,16 @@ function BorrowButton({ bookId, userId}) {
     const [isBorrowed, setIsBorrowed] = useState (false)
     const handleBorrowBook = async () => {
         try {
-            const response = await fetch('/borrowed_books', {
+            const response = await fetch('http://localhost:3000/borrowed_books', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Accepts': 'application/json'
                 },
-                body: JSON.stringify({ book_id: bookId , user_id: 3}),
+                body: JSON.stringify({ book_id: bookId , user_id: userId["user_id"]}),
                 
             },
-            console.log(bookId, userId));
+            console.log(JSON.stringify({ book_id: bookId , user_id: userId["user_id"]})))
 
             if (!response.ok) {
                 throw new Error('Failed to borrow book');
@@ -25,7 +26,8 @@ function BorrowButton({ bookId, userId}) {
             console.error('Error borrowing book:', error.message);
         }
     };
-    const handleReturnBook = async() =>{
+    const handleReturnBook = async(event) =>{
+        const borrowedBookId = event.target.dataset.booId
         try {
             const response = await fetch(`borrowed_books/${bookId}`,{
                 method: 'DELETE',
@@ -43,7 +45,7 @@ function BorrowButton({ bookId, userId}) {
     const handleClick = isBorrowed ? handleReturnBook : handleBorrowBook;
     const buttonText = isBorrowed ? 'Return book' : 'Borrow book'; 
     return (
-        <button onClick={handleClick}>{buttonText} </button>
+        <button onClick={handleClick} data-borrowedBookId>{buttonText} </button>
     );
 }
 
