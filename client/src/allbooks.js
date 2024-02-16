@@ -60,7 +60,7 @@ function Books ({ user }){
                 {books.filter(book => {
                     return Object.values(book).some(value => {
                         return typeof value === "string" && value.toLowerCase().includes(searchTerm.toLowerCase());
-                    })
+                    }) && book.quantity > 0
                 })
                 .map((book, index) => {
                     const borrowedBook = borrowedBooks?.find((item) => item.book_id === book.id);
