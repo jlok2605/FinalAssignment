@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Bookinfo from './bookinfo'
 import SearchBar from "./searchbar";
+import './bookcontainer.css'
 
 function Books ({ user }){
     const [books, setBooks] = useState([]);
@@ -21,6 +22,14 @@ function Books ({ user }){
     useEffect(() => {
         fetchBorrowedBooks();
     }, [user]);
+
+    function fetchBorrowedBooks() {
+        if (!!user?.user_id) {
+            fetch(`/borrowed_books/${user?.user_id}`)
+                .then(response => response.json())
+                .then(json => { setBorrowedBooks(json); });
+        }
+    }
 
     const handleBorrowBook = async (bookId) => {
         fetch('/borrowed_books', {
@@ -63,7 +72,7 @@ function Books ({ user }){
                     }) && book.quantity > 0
                 })
                 .map((book, index) => {
-                    const borrowedBook = borrowedBooks?.find((item) => item.book_id === book.id);
+                    const borrowedBook = user?.user_id ? borrowedBooks?.find((item) => item.book_id === book.id) : null;
                     const isBorrowed = !!borrowedBook
                     return (
                         <Bookinfo 
@@ -79,14 +88,6 @@ function Books ({ user }){
             </div>
         </div>
     )
-
-    function fetchBorrowedBooks() {
-        if (!!user) {
-            fetch(`/borrowed_books/${user?.user_id}`)
-                .then(response => response.json())
-                .then(json => { setBorrowedBooks(json); });
-        }
-    }
 }
 
 export default Books;

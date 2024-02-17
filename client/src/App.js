@@ -25,23 +25,19 @@ function App() {
       }
     });
   }, []);
-  
-  function handleLogin(user) {
-    console.log("Inside login", user)
-    setUser(user);
-  }
 
   function handleLogout() {
     setUser(null);} 
+    
   return (
     <div>
-      <NavBar onLogout={handleLogout}/>
-      <div>
+      <NavBar user={user} onLogout={handleLogout}/>
+      <div style={{padding: "20px"}}>
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/books" element={<Books user={user} />} />
-            <Route path = "/login" element = {<Login onLogin={handleLogin}/>} />
+            <Route path = "/login" element = {<Login/>} />
             <Route path = "/signup" element = {<Signup/>}/>
             <Route path = "/me"/>
             <Route path = "/mybooks" element = {<BorrowedBooksList user={user}/>}/>

@@ -1,15 +1,14 @@
-import React from "react"
+import React,{useState} from "react"
 import "./navbar.css"
-function NavBar( {onLogout}) {
+function NavBar( { user, onLogout }) {
 
-    // Send an AJAX request to the logout endpoint
+    
     function handleLogout(event) {
-        event.preventDefault();
         fetch('/logout', {
           method: 'DELETE',
         })
           .then((response) => {
-            console.log(response); // Log the response to see its value
+            console.log(response); 
             if (response.ok) {
               onLogout();
             } else {
@@ -30,8 +29,11 @@ function NavBar( {onLogout}) {
                         <a href = '/mybooks' className="tags" id = 'mybooks'> My Books</a>
                     </li>
                     <li>
-                        <a href = '#' onClick = {handleLogout} className="tags" id = 'logout'>Log Out</a>
-                    </li>
+                    { user?.user_id ?
+                        <a href = '#' onClick = {handleLogout}className="tags" id = 'logout'>Logout</a> :
+                        <a href = '/login' className="tags" id = 'login'>Login</a>
+                    }
+                    </li> 
                     <li>
                         <a href = '/books' className = "tags" id = 'books'>All books</a>
                     </li>

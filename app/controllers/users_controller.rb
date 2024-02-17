@@ -12,13 +12,7 @@ class UsersController < ApplicationController
     
   def show
     user = User.find_by(id: session[:user_id])
-    render json: { user_id: session[:user_id] }
-    # if user.nil?
-    #   puts "Error: User not found"
-    #   render json: { error: "User not found" }, status: :not_found
-    # else
-
-    # end
+    render json: { user_id: session[:user_id], is_admin: session[:is_admin] }
   end
     def user_params
       params.permit(:username, :password, :password_confirmation, :admin_code)

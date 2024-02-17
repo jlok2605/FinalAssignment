@@ -13,7 +13,8 @@ function BorrowedBooksList({ user }) {
   }
 
   useEffect(() => {
-    if (!!user) {
+    console.log(user?.user_id ? true : false)
+    if (user?.user_id) {
       fetchBorrowedBooks(user?.user_id);
     }
   }, [user]);
