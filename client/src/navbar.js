@@ -30,9 +30,6 @@ function NavBar( {onLogout}) {
                         <a href = '/mybooks' className="tags" id = 'mybooks'> My Books</a>
                     </li>
                     <li>
-                        <a href = '/search' className="tags" id = 'search'>Search</a>
-                    </li>
-                    <li>
                         <a href = '#' onClick = {handleLogout} className="tags" id = 'logout'>Log Out</a>
                     </li>
                     <li>
