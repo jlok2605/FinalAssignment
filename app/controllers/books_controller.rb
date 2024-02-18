@@ -13,12 +13,15 @@ class BooksController < ApplicationController
         book = Book.find(params[:id]) 
         render json: book, serializer: BookSerializer, status: :ok
     end
-    
     def create
-        book = Book.create! (book_params)
-
+        author = Author.find_or_create_by(name: params[:author_name])
+        book = author.books.create!(book_params)
+        
         render json: book, status: :created
     end
+    
+
+
     
     def destroy
         book = Book.find(params[:id])

@@ -21,16 +21,15 @@ function BookInfo({ book, user, isBorrowed, borrowedBook, handleBorrowBook, hand
                 <h6>Author: {book.author}</h6>
                 <h6>Genre: {book.genre}</h6>
                 <h6>Year Published: {book.yearpublished}</h6>
-                {(user?.user_id && !user?.is_admin) ? isBorrowed ?
+                { !user?.user_id && 
+                    <p>Please sign in before performing any actions</p>
+                }
+                {(user?.user_id && !user?.is_admin) && (isBorrowed ?
                     <button onClick={() => handleReturnBook(borrowedBook.id)}>Return book</button>
-                    : <button onClick={() => handleBorrowBook(book.id)}>Borrow book</button>
-                    : <p>Please sign in before borrowing a book</p>
+                    : <button onClick={() => handleBorrowBook(book.id)}>Borrow book</button>)
                 }
                 {(user?.user_id && user?.is_admin) &&
-                    <div>
-                        <button onClick={handleShow}>Edit book</button>
-                        <button onClick={() => { handleAdminDelete(book.id, book.title) }}> Delete book</button>
-                    </div>
+                    <button onClick={() => { handleAdminDelete(book.id, book.title) }}> Delete book</button>
                 }
             </div>
             <Modal show={show} onHide={handleClose} centered>
@@ -38,7 +37,7 @@ function BookInfo({ book, user, isBorrowed, borrowedBook, handleBorrowBook, hand
                     <Modal.Title>Edit book</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <form>
+                    <form style={{display: ""}}>
                         <label htmlFor='title'>Title</label>
                         <input
                             type="text"

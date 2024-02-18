@@ -5,22 +5,51 @@ import './bookcontainer.css'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-function Books ({ user }){
+function Books({ user }) {
     const [books, setBooks] = useState([]);
     const [borrowedBooks, setBorrowedBooks] = useState([])
     const [searchTerm, setSearchTerm] = useState("");
     const [show, setShow] = useState(false);
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
-    const [genre, setGenre] = useState("")
+    const [genre, setGenre] = useState("");
+    const [quantity, setQuantity] = useState(null)
+    const [yearpublished, setYearPublished] = useState(null)
+
+
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
 
-    useEffect (()=> {
+    function addBook() {
+        fetch("/books", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "title": title,
+                "genre": genre,
+                "yearpublished": yearpublished,
+                "quantity": quantity,
+                "author_name": author
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Book created');
+            } else {
+                alert('Failed to create book')
+            }
+        })
+        handleClose()
+        fetchBooks()
+    }
+
+    useEffect(() => {
         fetchBooks();
-    },[])
+    }, [])
 
     useEffect(() => {
         fetchBorrowedBooks();
@@ -31,22 +60,22 @@ function Books ({ user }){
             method: "GET",
             "Content-Type": "application/json"
         })
-            .then(response => response.json())
-            .then((response) => {
-                setBooks(response);
-            });
+        .then(response => response.json())
+        .then((response) => {
+            setBooks(response);
+        });
     }
 
 
     function fetchBorrowedBooks() {
         if (!!user?.user_id) {
             fetch(`/borrowed_books/${user?.user_id}`)
-                .then(response => response.json())
-                .then(json => { setBorrowedBooks(json); });
+            .then(response => response.json())
+            .then(json => { setBorrowedBooks(json); });
         }
     }
-    
-    function handleAdminDelete (bookId, bookTitle) {
+
+    function handleAdminDelete(bookId, bookTitle) {
         const isConfirmed = window.confirm(`Are you sure you want to delete ${bookTitle}?`)
 
         if (isConfirmed) {
@@ -63,7 +92,7 @@ function Books ({ user }){
             })
         }
     }
-    
+
 
     const handleBorrowBook = async (bookId) => {
         fetch('/borrowed_books', {
@@ -73,7 +102,7 @@ function Books ({ user }){
                 'Accepts': 'application/json'
             },
             body: JSON.stringify({
-                book_id: bookId, 
+                book_id: bookId,
                 user_id: user?.user_id
             })
         })
@@ -95,39 +124,41 @@ function Books ({ user }){
         })
     };
 
-    return(
+    return (
         <div>
             <h1>Books</h1>
-            <SearchBar setSearchTerm={setSearchTerm}/>
-            <button onClick={handleShow}>Add Book</button>
+            <SearchBar setSearchTerm={setSearchTerm} />
+            {(user?.user_id&& user?.is_admin) &&
+                <button onClick={handleShow}>Add Book</button>
+                }
             <div id="Books">
                 {books.filter(book => {
                     return Object.values(book).some(value => {
                         return typeof value === "string" && value.toLowerCase().includes(searchTerm.toLowerCase());
                     }) && book.quantity > 0
                 })
-                .map((book, index) => {
-                    const borrowedBook = user?.user_id ? borrowedBooks?.find((item) => item.book_id === book.id) : null;
-                    const isBorrowed = !!borrowedBook
-                    return (
-                        <Bookinfo 
-                            book={book} 
-                            user={user} 
-                            isBorrowed={isBorrowed} 
-                            borrowedBook={borrowedBook}
-                            handleBorrowBook={handleBorrowBook}
-                            handleReturnBook={handleReturnBook}
-                            handleAdminDelete={handleAdminDelete}
-                        />
-                    )
-                })}
+                    .map((book, index) => {
+                        const borrowedBook = user?.user_id ? borrowedBooks?.find((item) => item.book_id === book.id) : null;
+                        const isBorrowed = !!borrowedBook
+                        return (
+                            <Bookinfo
+                                book={book}
+                                user={user}
+                                isBorrowed={isBorrowed}
+                                borrowedBook={borrowedBook}
+                                handleBorrowBook={handleBorrowBook}
+                                handleReturnBook={handleReturnBook}
+                                handleAdminDelete={handleAdminDelete}
+                            />
+                        )
+                    })}
             </div>
             <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header closeButton>
-                    <Modal.Title>Edit book</Modal.Title>
+                    <Modal.Title>Add book</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <form>
+                    <form style={{display:"flex", flexDirection: "column"}}>
                         <label htmlFor='title'>Title</label>
                         <input
                             type="text"
@@ -135,19 +166,33 @@ function Books ({ user }){
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                         />
-                        <label htmlFor='title'>Author</label>
+                        <label htmlFor='title'>Author:</label>
                         <input
                             type="text"
                             id="author"
                             value={author}
                             onChange={(e) => setAuthor(e.target.value)}
                         />
-                        <label htmlFor='genre'>Genre</label>
+                        <label htmlFor='genre'>Genre:</label>
                         <input
                             type="text"
                             id="genre"
                             value={genre}
                             onChange={(e) => setGenre(e.target.value)}
+                        />
+                        <label htmlFor='genre'>Year Published</label>
+                        <input
+                            type="number"
+                            id="yearpublished"
+                            value={yearpublished}
+                            onChange={(e) => setYearPublished(e.target.value)}
+                        />
+                        <label htmlFor='quantity'>Quantity:</label>
+                        <input
+                            type="number"
+                            id="quantity"
+                            value={quantity}
+                            onChange={(e) => setQuantity(e.target.value)}
                         />
                     </form>
                 </Modal.Body>
@@ -155,7 +200,7 @@ function Books ({ user }){
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="primary" onClick={addBook}>
                         Save Changes
                     </Button>
                 </Modal.Footer>
