@@ -2,26 +2,41 @@ import React, { useState, useEffect } from "react";
 import Bookinfo from './bookinfo'
 import SearchBar from "./searchbar";
 import './bookcontainer.css'
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 function Books ({ user }){
     const [books, setBooks] = useState([]);
     const [borrowedBooks, setBorrowedBooks] = useState([])
     const [searchTerm, setSearchTerm] = useState("");
+    const [show, setShow] = useState(false);
+    const [title, setTitle] = useState("");
+    const [author, setAuthor] = useState("");
+    const [genre, setGenre] = useState("")
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
 
     useEffect (()=> {
-        fetch ('/books',{
-            method: "GET",
-            "Content-Type": "application/json"
-        })
-        .then (response => response.json())
-        .then ((response) => {
-            setBooks(response);
-        })
+        fetchBooks();
     },[])
 
     useEffect(() => {
         fetchBorrowedBooks();
     }, [user]);
+
+    function fetchBooks() {
+        fetch('/books', {
+            method: "GET",
+            "Content-Type": "application/json"
+        })
+            .then(response => response.json())
+            .then((response) => {
+                setBooks(response);
+            });
+    }
+
 
     function fetchBorrowedBooks() {
         if (!!user?.user_id) {
@@ -30,6 +45,25 @@ function Books ({ user }){
                 .then(json => { setBorrowedBooks(json); });
         }
     }
+    
+    function handleAdminDelete (bookId, bookTitle) {
+        const isConfirmed = window.confirm(`Are you sure you want to delete ${bookTitle}?`)
+
+        if (isConfirmed) {
+            fetch(`/books/${bookId}`, {
+                method: 'DELETE',
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Book deleted!');
+                    fetchBooks()
+                } else {
+                    alert('Failed to delete book')
+                }
+            })
+        }
+    }
+    
 
     const handleBorrowBook = async (bookId) => {
         fetch('/borrowed_books', {
@@ -65,6 +99,7 @@ function Books ({ user }){
         <div>
             <h1>Books</h1>
             <SearchBar setSearchTerm={setSearchTerm}/>
+            <button onClick={handleShow}>Add Book</button>
             <div id="Books">
                 {books.filter(book => {
                     return Object.values(book).some(value => {
@@ -82,10 +117,49 @@ function Books ({ user }){
                             borrowedBook={borrowedBook}
                             handleBorrowBook={handleBorrowBook}
                             handleReturnBook={handleReturnBook}
+                            handleAdminDelete={handleAdminDelete}
                         />
                     )
                 })}
             </div>
+            <Modal show={show} onHide={handleClose} centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>Edit book</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <form>
+                        <label htmlFor='title'>Title</label>
+                        <input
+                            type="text"
+                            id="title"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                        />
+                        <label htmlFor='title'>Author</label>
+                        <input
+                            type="text"
+                            id="author"
+                            value={author}
+                            onChange={(e) => setAuthor(e.target.value)}
+                        />
+                        <label htmlFor='genre'>Genre</label>
+                        <input
+                            type="text"
+                            id="genre"
+                            value={genre}
+                            onChange={(e) => setGenre(e.target.value)}
+                        />
+                    </form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleClose}>
+                        Save Changes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     )
 }
