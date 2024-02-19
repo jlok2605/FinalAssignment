@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Signup() {
     const [usernameInput, setUsernameInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
     const [confirmationPasswordInput, setConfirmationPasswordInput] = useState("");
     const [adminCode, setAdminCode] = useState("");
+    const navigate = useNavigate();
 
     const submitForm = (e) => {
         e.preventDefault();
@@ -33,8 +35,11 @@ function Signup() {
                 admin_code: adminCode
             })
         })
-            .then(response => response.json())
-            .then(json => { console.log(json) });
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            navigate('/');
+        });
     };
 
     return (
