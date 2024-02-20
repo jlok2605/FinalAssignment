@@ -54,7 +54,6 @@ function Books({ user }) {
     useEffect(() => {
         fetchBorrowedBooks();
     }, [user]);
-
     function fetchBooks() {
         fetch('/books', {
             method: "GET",
@@ -62,7 +61,8 @@ function Books({ user }) {
         })
         .then(response => response.json())
         .then((response) => {
-            setBooks(response);
+            const filteredBooks = response.filter(book => book.quantity > 0);
+            setBooks(filteredBooks);
         });
     }
 

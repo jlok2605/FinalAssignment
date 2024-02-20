@@ -16,3 +16,7 @@
 #       quantity: rand(1..5)
 #     )
 # end
+# Book.where('quantity <= 0').find_each do |book|
+#     # Update quantity to a value greater than 0
+#     book.update(quantity: rand(1..10))
+#   end

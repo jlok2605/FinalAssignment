@@ -31,10 +31,21 @@ class BooksController < ApplicationController
 
     def update
         book = Book.find(params[:id])
+        
         if book.update(book_params)
             render json: {message: "Book updated"}, status: :ok
         else
             render json:{error: "Failed to update book"}, status: :unprocessable_entity
+        end
+    end
+    
+    def borrow
+        book = Book.find(params[:id])
+        if book.quantity > 0
+          book.update(quantity: book.quantity - 1)
+          render json: { message: 'Book borrowed successfully' }
+        else
+          render json: { error: 'Book out of stock' }, status: :unprocessable_entity
         end
     end
     

@@ -9,12 +9,16 @@ class BorrowedBooksController < ApplicationController
       borrowed_book = BorrowedBook.new(borrowed_book_params)
       book = Book.find(borrowed_book.book_id)
       borrowed_book.checked_out_at = Time.zone.now # Set checkout date to when button is clicked
+    
       if book.quantity == 0
-        puts "no more books remaining"
-        render json: {error: "No copies of this book are available"}, status: :unprocessable_entity
+        render json: { error: "No copies of this book are available" }, status: :unprocessable_entity
         return
       end
-      if borrowed_book.save
+    
+      # Reduce the quantity of the book by 1
+      book.quantity -= 1
+    
+      if borrowed_book.save && book.save
         render json: borrowed_book, status: :created
       else
         render json: borrowed_book.errors, status: :unprocessable_entity

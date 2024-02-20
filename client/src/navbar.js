@@ -25,18 +25,20 @@ function NavBar( { user, onLogout }) {
             <nav className = "nav">
                 <a href = '/' className="site-title">Evergreen Knowledge Hub</a>
                 <ul className = 'list'>
+                  {user?.user_id && (
                     <li>
-                        <a href = '/mybooks' className="tags" id = 'mybooks'> My Books</a>
+                        <a href='/mybooks' className="tags" id='mybooks'> My Books</a>
                     </li>
-                    <li>
-                    { user?.user_id ?
-                        <a href = '#' onClick = {handleLogout}className="tags" id = 'logout'>Logout</a> :
-                        <a href = '/login' className="tags" id = 'login'>Login</a>
-                    }
-                    </li> 
-                    <li>
-                        <a href = '/books' className = "tags" id = 'books'>All books</a>
-                    </li>
+                  )}
+                  <li>
+                  { user?.user_id ?
+                      <a href = '#' onClick = {handleLogout}className="tags" id = 'logout'>Logout</a> :
+                      <a href = '/login' className="tags" id = 'login'>Login</a>
+                  }
+                  </li> 
+                  <li>
+                      <a href = '/books' className = "tags" id = 'books'>All books</a>
+                  </li>
                 </ul>
             </nav>
         </div>
